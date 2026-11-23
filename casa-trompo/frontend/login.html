@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <!-- Metadatos de idioma, vista móvil, identidad visual y hojas de estilo. -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Iniciar sesión · Casa Trompo</title>
+    <meta
+      name="description"
+      content="Ingresa al portal de familias de Casa Trompo."
+    />
+    <meta name="theme-color" content="#FCEBDC" />
+    <link rel="icon" type="image/png" href="img/Logo_Blanco_NOBG.png" />
+    <link rel="icon" type="image/svg+xml" href="img/favicon.svg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Caveat:wght@600&family=Lora:wght@500;600;700&family=Nunito:wght@400;600;700;800&family=Pacifico&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    />
+    <link rel="stylesheet" href="css/General_Styles.css" />
+    <link rel="stylesheet" href="css/login.css" />
+  </head>
+  <body>
+    <!-- Enlace de acceso rápido para saltar directamente al inicio de sesión. -->
+    <a class="skip-link" href="#contenido">Saltar al formulario</a>
+
+    <!-- Fondo decorativo y tarjeta que concentra el acceso al portal familiar. -->
+    <div class="login">
+      <!-- Fondo: recorte del atardecer de la ilustración -->
+      <div class="login__bg" aria-hidden="true">
+        <img src="img/atardecer.jpg" width="1044" height="340" alt="" />
+      </div>
+
+      <a class="btn btn--cream btn--small login__back" href="index.html"
+        >Volver al inicio</a
+      >
+
+      <!-- Encabezado de marca y formulario de ingreso con opción para recordar el correo. -->
+      <main class="login-card" id="contenido">
+        <div class="login-card__head">
+          <span class="logo-mark" aria-hidden="true"></span>
+          <p class="brand-name">Casa Trompo</p>
+          <h1>Bienvenido de nuevo a casa</h1>
+        </div>
+
+        <!-- El formulario es demostrativo y conserva los valores para facilitar pruebas. -->
+        <form
+          data-demo-form
+          data-keep-values
+          data-success="Ingreso de demostración: aquí se conectará el portal con el servidor."
+        >
+          <!-- Para conectarlo a tu servidor: agrega method="post" y action="tu-ruta" (PHP o Express) -->
+          <div class="field">
+            <label for="email">Correo electrónico</label>
+            <input
+              class="input"
+              id="email"
+              name="email"
+              type="email"
+              autocomplete="username"
+              required
+            />
+          </div>
+
+          <div class="field">
+            <label for="clave">Contraseña</label>
+            <div class="password">
+              <input
+                class="input"
+                id="clave"
+                name="clave"
+                type="password"
+                autocomplete="current-password"
+                required
+              />
+              <button
+                class="password__toggle"
+                type="button"
+                data-toggle-password="clave"
+                aria-pressed="false"
+                aria-label="Mostrar contraseña"
+              >
+                Mostrar
+              </button>
+            </div>
+          </div>
+
+          <div class="login-meta">
+            <div class="check">
+              <input type="checkbox" id="remember" name="remember" />
+              <label for="remember">Recordar mis datos</label>
+            </div>
+            <a href="#">¿Olvidaste tu contraseña?</a>
+          </div>
+
+          <button class="btn btn--primary btn--block" type="submit">
+            Ingresar al portal
+          </button>
+          <p class="form-status" role="status" tabindex="-1" hidden></p>
+        </form>
+
+        <p class="auth-alt">
+          ¿Aún no tienes cuenta?
+          <a href="registro.html">Crea tu cuenta familiar</a>
+        </p>
+      </main>
+    </div>
+
+    <!-- Comportamientos compartidos: accesibilidad, recordar correo y validación. -->
+    <script src="js/main.js"></script>
+  </body>
+</html>

@@ -1,0 +1,243 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <!-- Metadatos de idioma, vista móvil, identidad visual y hojas de estilo. -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Crear cuenta familiar · Casa Trompo</title>
+    <meta
+      name="description"
+      content="Crea tu cuenta familiar en Casa Trompo para estar cerca de quien más quieres."
+    />
+    <meta name="theme-color" content="#FCEBDC" />
+    <link rel="icon" type="image/png" href="img/Logo_Blanco_NOBG.png" />
+    <link rel="icon" type="image/svg+xml" href="img/favicon.svg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Caveat:wght@600&family=Lora:wght@500;600;700&family=Nunito:wght@400;600;700;800&family=Pacifico&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    />
+    <link rel="stylesheet" href="css/General_Styles.css" />
+    <link rel="stylesheet" href="css/registro.css" />
+  </head>
+  <body>
+    <!-- Enlace de acceso rápido para saltar directamente al formulario. -->
+    <a class="skip-link" href="#contenido">Saltar al formulario</a>
+
+    <!-- Pantalla de registro dividida entre una bienvenida visual y la creación de cuenta. -->
+    <div class="auth-split">
+      <!-- Imagen de bienvenida y enlace de marca para volver al inicio. -->
+      <aside class="auth-visual">
+        <img
+          src="img/hero-escena.jpg"
+          width="1044"
+          height="980"
+          alt="Una pareja de abuelos abrazados mirando el atardecer en el campo, con un trompo, un carrito y una muñeca a su lado"
+        />
+
+        <a
+          class="brand"
+          href="index.html"
+          aria-label="Casa Trompo, volver al inicio"
+        >
+          <span class="logo-mark" aria-hidden="true"></span>
+          <span class="brand__text">
+            <span class="brand__kicker">Hogar geriátrico</span>
+            <span class="brand__name">Casa Trompo</span>
+          </span>
+        </a>
+
+        <div class="auth-visual__text">
+          <p class="script">Bienvenidos a la familia</p>
+          <p>
+            Crea tu cuenta para estar cerca de quien más quieres, aunque no
+            puedas venir hoy.
+          </p>
+        </div>
+      </aside>
+
+      <!-- Formulario para crear la cuenta y capturar los datos del familiar responsable. -->
+      <main class="auth-form-wrap" id="contenido">
+        <div class="auth-form">
+          <h1>Crea tu cuenta familiar</h1>
+          <p class="lead">Solo tarda un par de minutos.</p>
+
+          <form
+            data-demo-form
+            data-success="Cuenta de demostración creada. Aquí se conectará el registro con el servidor."
+          >
+            <!-- Para conectarlo a tu servidor: agrega method="post" y action="tu-ruta" (PHP o Express) -->
+            <!-- Datos personales y relación con la persona residente. -->
+            <div class="field">
+              <label for="nombre"
+                >Nombre completo del acudiente
+                <span class="req" aria-hidden="true">*</span></label
+              >
+              <input
+                class="input"
+                id="nombre"
+                name="nombre"
+                type="text"
+                autocomplete="name"
+                required
+              />
+            </div>
+
+            <div class="field">
+              <label for="correo"
+                >Correo electrónico
+                <span class="req" aria-hidden="true">*</span></label
+              >
+              <input
+                class="input"
+                id="correo"
+                name="correo"
+                type="email"
+                autocomplete="email"
+                required
+              />
+            </div>
+
+            <div class="form-row">
+              <div class="field">
+                <label for="telefono"
+                  >Teléfono <span class="req" aria-hidden="true">*</span></label
+                >
+                <input
+                  class="input"
+                  id="telefono"
+                  name="telefono"
+                  type="tel"
+                  autocomplete="tel"
+                  inputmode="tel"
+                  required
+                />
+              </div>
+
+              <div class="field">
+                <label for="documento"
+                  >Número de documento
+                  <span class="req" aria-hidden="true">*</span></label
+                >
+                <input
+                  class="input"
+                  id="documento"
+                  name="documento"
+                  type="text"
+                  inputmode="numeric"
+                  autocomplete="off"
+                  pattern="[0-9]{5,15}"
+                  title="Escribe solo números, sin puntos ni espacios"
+                  required
+                />
+              </div>
+            </div>
+
+            <div class="field">
+              <label for="parentesco"
+                >Parentesco con el residente
+                <span class="req" aria-hidden="true">*</span></label
+              >
+              <select class="select" id="parentesco" name="parentesco" required>
+                <option value="" disabled selected>
+                  Selecciona una opción
+                </option>
+                <option>Hijo o hija</option>
+                <option>Nieto o nieta</option>
+                <option>Esposo o esposa</option>
+                <option>Hermano o hermana</option>
+                <option>Sobrino o sobrina</option>
+                <option>Otro familiar o allegado</option>
+              </select>
+            </div>
+
+            <!-- Credenciales de acceso; los controles permiten revelar la contraseña de forma temporal. -->
+            <div class="field">
+              <label for="password"
+                >Contraseña <span class="req" aria-hidden="true">*</span></label
+              >
+              <div class="password">
+                <input
+                  class="input"
+                  id="password"
+                  name="password"
+                  type="password"
+                  autocomplete="new-password"
+                  minlength="8"
+                  required
+                  aria-describedby="password-ayuda"
+                />
+                <button
+                  class="password__toggle"
+                  type="button"
+                  data-toggle-password="password"
+                  aria-pressed="false"
+                  aria-label="Mostrar contraseña"
+                >
+                  Mostrar
+                </button>
+              </div>
+              <span class="hint" id="password-ayuda">Mínimo 8 caracteres.</span>
+            </div>
+
+            <div class="field">
+              <label for="confirm"
+                >Confirmar contraseña
+                <span class="req" aria-hidden="true">*</span></label
+              >
+              <div class="password">
+                <input
+                  class="input"
+                  id="confirm"
+                  name="confirm"
+                  type="password"
+                  autocomplete="new-password"
+                  minlength="8"
+                  required
+                  aria-describedby="confirm-error"
+                />
+                <button
+                  class="password__toggle"
+                  type="button"
+                  data-toggle-password="confirm"
+                  aria-pressed="false"
+                  aria-label="Mostrar confirmación de contraseña"
+                >
+                  Mostrar
+                </button>
+              </div>
+              <p class="field-error" id="confirm-error" aria-live="polite"></p>
+            </div>
+
+            <!-- Autorización requerida para el tratamiento de datos personales. -->
+            <div class="check">
+              <input type="checkbox" id="datos" name="datos" required />
+              <label for="datos"
+                >Autorizo el tratamiento de mis datos personales para gestionar
+                mi cuenta familiar.
+                <span class="req" aria-hidden="true">*</span></label
+              >
+            </div>
+
+            <button class="btn btn--primary btn--block" type="submit">
+              Crear cuenta familiar
+            </button>
+            <p class="form-status" role="status" tabindex="-1" hidden></p>
+          </form>
+
+          <p class="auth-alt">
+            ¿Ya tienes cuenta? <a href="login.html">Inicia sesión aquí</a>
+          </p>
+        </div>
+      </main>
+    </div>
+
+    <!-- Comportamientos compartidos: accesibilidad, navegación y validación de formularios. -->
+    <script src="js/main.js"></script>
+  </body>
+</html>

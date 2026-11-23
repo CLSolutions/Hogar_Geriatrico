@@ -1,0 +1,358 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <!-- Metadatos de idioma, vista móvil, identidad visual y hojas de estilo. -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Contacto · Casa Trompo</title>
+    <meta
+      name="description"
+      content="Escríbenos o agenda una visita a Casa Trompo. Resolvemos tus dudas y coordinamos un recorrido por la casa."
+    />
+    <meta name="theme-color" content="#FCEBDC" />
+    <link rel="icon" type="image/png" href="img/Logo_Blanco_NOBG.png" />
+    <link rel="icon" type="image/svg+xml" href="img/favicon.svg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Caveat:wght@600&family=Lora:wght@500;600;700&family=Nunito:wght@400;600;700;800&family=Pacifico&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    />
+    <link rel="stylesheet" href="css/General_Styles.css" />
+    <link rel="stylesheet" href="css/contacto.css" />
+  </head>
+  <body>
+    <!-- Enlace de acceso rápido para saltar al contenido de contacto. -->
+    <a class="skip-link" href="#contenido">Saltar al contenido</a>
+
+    <!-- Símbolos SVG reutilizables para los datos y acciones de contacto. -->
+    <svg class="svg-symbols" aria-hidden="true" focusable="false">
+      <symbol id="i-pin" viewBox="0 0 48 48">
+        <path d="M24 43c-9-9-14-16-14-23a14 14 0 0 1 28 0c0 7-5 14-14 23z" />
+        <circle cx="24" cy="20" r="5" />
+      </symbol>
+      <symbol id="i-phone" viewBox="0 0 48 48">
+        <path
+          d="M12 6h8l3 10-5 3a24 24 0 0 0 11 11l3-5 10 3v8c0 2-2 4-4 4C20 40 8 28 8 10c0-2 2-4 4-4z"
+        />
+      </symbol>
+      <symbol id="i-mail" viewBox="0 0 48 48">
+        <rect x="6" y="10" width="36" height="28" rx="3" />
+        <path d="M7 13l17 13 17-13" />
+      </symbol>
+      <symbol id="i-clock" viewBox="0 0 48 48">
+        <circle cx="24" cy="24" r="17" />
+        <path d="M24 13v11l8 5" />
+      </symbol>
+      <symbol id="i-chat" viewBox="0 0 48 48">
+        <path
+          d="M8 10h32a2 2 0 0 1 2 2v20a2 2 0 0 1-2 2H22l-9 8v-8H8a2 2 0 0 1-2-2V12a2 2 0 0 1 2-2z"
+        />
+        <path d="M14 20h20M14 27h12" />
+      </symbol>
+    </svg>
+
+    <!-- Cabecera global con enlaces a las páginas y al portal familiar. -->
+    <header class="site-header">
+      <div class="container site-header__inner">
+        <a
+          class="brand"
+          href="index.html"
+          aria-label="Casa Trompo, ir al inicio"
+        >
+          <span class="logo-mark" aria-hidden="true"></span>
+          <span class="brand__text">
+            <span class="brand__kicker">Hogar geriátrico</span>
+            <span class="brand__name">Casa Trompo</span>
+          </span>
+        </a>
+
+        <button
+          class="nav-toggle"
+          type="button"
+          aria-expanded="false"
+          aria-controls="menu"
+          aria-label="Abrir menú"
+        >
+          <span class="nav-toggle__bars" aria-hidden="true"></span>
+        </button>
+
+        <div class="site-nav" id="menu">
+          <nav aria-label="Principal">
+            <ul class="site-nav__links">
+              <li><a href="index.html">Inicio</a></li>
+              <li><a href="nosotros.html">Nosotros</a></li>
+              <li><a href="contacto.html" aria-current="page">Contacto</a></li>
+            </ul>
+          </nav>
+          <div class="site-nav__actions">
+            <a class="btn btn--outline btn--small" href="login.html"
+              >Iniciar Sesión</a
+            >
+            <a class="btn btn--primary btn--small" href="registro.html"
+              >Registrarse</a
+            >
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- Contenido principal con presentación de contacto, formulario y datos de visita. -->
+    <main id="contenido">
+      <!-- Introducción breve que explica cómo solicitar información o coordinar una visita. -->
+      <section
+        class="page-hero page-hero--center"
+        aria-labelledby="contacto-titulo"
+      >
+        <div class="container">
+          <h1 id="contacto-titulo">Hablemos en familia</h1>
+          <p class="lead">
+            Cuéntanos qué necesitas. Resolvemos tus dudas o coordinamos una
+            visita para que conozcas la casa con calma.
+          </p>
+        </div>
+      </section>
+
+      <!-- Formulario de consulta junto a la información práctica para llegar y comunicarse. -->
+      <section class="section contact-form-section">
+        <div class="container contact-grid">
+          <!-- Columna izquierda: formulario -->
+          <div class="form-card">
+            <h2>Escríbenos</h2>
+
+            <form
+              data-demo-form
+              data-success="Gracias por escribirnos. Te responderemos lo antes posible."
+            >
+              <!-- Para conectarlo a tu servidor: agrega method="post" y action="tu-ruta" (PHP o Express) -->
+              <div class="field">
+                <label for="nombre"
+                  >Nombre completo
+                  <span class="req" aria-hidden="true">*</span></label
+                >
+                <input
+                  class="input"
+                  id="nombre"
+                  name="nombre"
+                  type="text"
+                  autocomplete="name"
+                  required
+                />
+              </div>
+
+              <div class="field">
+                <label for="correo"
+                  >Correo electrónico
+                  <span class="req" aria-hidden="true">*</span></label
+                >
+                <input
+                  class="input"
+                  id="correo"
+                  name="correo"
+                  type="email"
+                  autocomplete="email"
+                  required
+                />
+              </div>
+
+              <div class="field">
+                <label for="telefono"
+                  >Teléfono / WhatsApp
+                  <span class="req" aria-hidden="true">*</span></label
+                >
+                <input
+                  class="input"
+                  id="telefono"
+                  name="telefono"
+                  type="tel"
+                  autocomplete="tel"
+                  inputmode="tel"
+                  required
+                  aria-describedby="telefono-ayuda"
+                />
+                <span class="hint" id="telefono-ayuda"
+                  >Con indicativo si estás fuera de Colombia.</span
+                >
+              </div>
+
+              <div class="field">
+                <label for="motivo"
+                  >Motivo de consulta o solicitud de visita
+                  <span class="req" aria-hidden="true">*</span></label
+                >
+                <select class="select" id="motivo" name="motivo" required>
+                  <option value="" disabled selected>
+                    Selecciona una opción
+                  </option>
+                  <option value="visita">Quiero agendar una visita</option>
+                  <option value="informacion">
+                    Información sobre el hogar y sus servicios
+                  </option>
+                  <option value="costos">Costos y disponibilidad</option>
+                  <option value="otro">Otro motivo</option>
+                </select>
+              </div>
+
+              <div class="field">
+                <label for="mensaje"
+                  >Mensaje <span class="req" aria-hidden="true">*</span></label
+                >
+                <textarea
+                  class="textarea"
+                  id="mensaje"
+                  name="mensaje"
+                  required
+                  placeholder="Cuéntanos un poco sobre tu ser querido y qué día te queda mejor para visitarnos."
+                ></textarea>
+              </div>
+
+              <button class="btn btn--primary btn--block" type="submit">
+                Enviar mensaje
+              </button>
+              <p class="form-status" role="status" tabindex="-1" hidden></p>
+            </form>
+          </div>
+
+          <!-- ===== Columna derecha: datos y mapa ===== -->
+          <aside class="info-card" aria-labelledby="visita-titulo">
+            <h2 id="visita-titulo">Ven a visitarnos</h2>
+
+            <!-- Datos de ejemplo: reemplaza por los reales -->
+            <ul class="contact-list">
+              <li>
+                <span class="icon-badge"
+                  ><svg class="icon" aria-hidden="true">
+                    <use href="#i-pin" /></svg
+                ></span>
+                <div>
+                  <strong>Dónde estamos</strong>
+                  <p>
+                    Vereda El Trompo, a 20 minutos del casco urbano. Camino
+                    destapado señalizado con un trompo de madera.
+                  </p>
+                </div>
+              </li>
+              <li>
+                <span class="icon-badge icon-badge--sage"
+                  ><svg class="icon" aria-hidden="true">
+                    <use href="#i-clock" /></svg
+                ></span>
+                <div>
+                  <strong>Horarios de visita</strong>
+                  <p>
+                    Todos los días, de 9:00 a. m. a 6:00 p. m. Si necesitas otro
+                    horario, avísanos y lo coordinamos.
+                  </p>
+                </div>
+              </li>
+            </ul>
+
+            <div class="contact-actions">
+              <a class="btn btn--sage" href="tel:+573000000000"
+                ><svg class="icon" aria-hidden="true">
+                  <use href="#i-phone" /></svg
+                >Llamar ahora</a
+              >
+              <a
+                class="btn btn--primary"
+                href="https://wa.me/573000000000"
+                target="_blank"
+                rel="noopener"
+                ><svg class="icon" aria-hidden="true">
+                  <use href="#i-chat" /></svg
+                >WhatsApp</a
+              >
+            </div>
+
+            <!-- Mapa: reemplaza este bloque por un <iframe> de Google Maps u OpenStreetMap con la ubicación real:
+               <iframe src="URL_DEL_MAPA" title="Mapa de ubicación de Casa Trompo" loading="lazy"></iframe> -->
+            <div
+              class="map-box"
+              role="img"
+              aria-label="Espacio reservado para el mapa interactivo"
+            >
+              <div>
+                <svg class="icon" aria-hidden="true"><use href="#i-pin" /></svg>
+                <p>Aquí irá el mapa interactivo con la ubicación de la casa</p>
+              </div>
+            </div>
+          </aside>
+        </div>
+      </section>
+    </main>
+
+    <!-- Pie global con información de contacto, navegación secundaria y derechos. -->
+    <footer class="site-footer">
+      <div class="container footer-grid">
+        <div class="footer-brand">
+          <a
+            class="brand"
+            href="index.html"
+            aria-label="Casa Trompo, ir al inicio"
+          >
+            <span class="logo-mark" aria-hidden="true"></span>
+            <span class="brand__text">
+              <span class="brand__kicker">Hogar geriátrico</span>
+              <span class="brand__name">Casa Trompo</span>
+            </span>
+          </a>
+          <p class="script">donde la infancia vuelve a casa</p>
+        </div>
+
+        <div>
+          <h3>Contacto</h3>
+          <ul class="footer-list">
+            <li>
+              <svg class="icon" aria-hidden="true"><use href="#i-pin" /></svg
+              ><span>Vereda El Trompo, a 20 minutos del casco urbano</span>
+            </li>
+            <li>
+              <svg class="icon" aria-hidden="true"><use href="#i-phone" /></svg
+              ><a href="tel:+573000000000">+57 300 000 0000</a>
+            </li>
+            <li>
+              <svg class="icon" aria-hidden="true"><use href="#i-mail" /></svg
+              ><a href="mailto:contacto@casatrompo.com"
+                >contacto@casatrompo.com</a
+              >
+            </li>
+            <li>
+              <svg class="icon" aria-hidden="true"><use href="#i-clock" /></svg
+              ><span>Visitas todos los días, de 9:00 a. m. a 6:00 p. m.</span>
+            </li>
+          </ul>
+        </div>
+
+        <nav aria-label="Navegación del pie de página">
+          <h3>Navegación</h3>
+          <ul class="footer-list">
+            <li><a href="index.html">Inicio</a></li>
+            <li><a href="nosotros.html">Nosotros</a></li>
+            <li><a href="contacto.html">Contacto</a></li>
+          </ul>
+        </nav>
+
+        <nav aria-label="Portal de familias">
+          <h3>Portal de familias</h3>
+          <ul class="footer-list">
+            <li><a href="login.html">Iniciar Sesión</a></li>
+            <li><a href="registro.html">Registrarse</a></li>
+          </ul>
+        </nav>
+      </div>
+      <div class="container footer-bottom">
+        <p>
+          © <span data-year>2026</span> CL Solutions. Todos los derechos
+          reservados.
+        </p>
+      </div>
+    </footer>
+
+    <!-- Comportamientos compartidos: accesibilidad, preselección y validación del formulario. -->
+    <script src="js/main.js"></script>
+  </body>
+</html>

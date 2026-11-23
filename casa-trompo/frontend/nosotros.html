@@ -1,0 +1,482 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <!-- Metadatos de idioma, vista móvil, identidad visual y hojas de estilo. -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Nosotros · Casa Trompo</title>
+    <meta
+      name="description"
+      content="Conoce la filosofía, la misión, los espacios y el equipo humano de Casa Trompo, un hogar geriátrico de campo."
+    />
+    <meta name="theme-color" content="#FCEBDC" />
+    <link rel="icon" type="image/png" href="img/Logo_Blanco_NOBG.png" />
+    <link rel="icon" type="image/svg+xml" href="img/favicon.svg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Caveat:wght@600&family=Lora:wght@500;600;700&family=Nunito:wght@400;600;700;800&family=Pacifico&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    />
+    <link rel="stylesheet" href="css/General_Styles.css" />
+    <link rel="stylesheet" href="css/nosotros.css" />
+  </head>
+  <body>
+    <!-- Enlace de acceso rápido para navegar directamente al contenido principal. -->
+    <a class="skip-link" href="#contenido">Saltar al contenido</a>
+
+    <!-- Símbolos SVG reutilizables para los valores, espacios y datos de contacto. -->
+    <svg class="svg-symbols" aria-hidden="true" focusable="false">
+      <symbol id="i-heart" viewBox="0 0 48 48">
+        <path
+          d="M24 41C9 31 6 20 12 14.5c4-3.6 9-2 12 2.5 3-4.5 8-6.1 12-2.5 6 5.5 3 16.5-12 26.5z"
+        />
+      </symbol>
+      <symbol id="i-trompo" viewBox="0 0 48 48">
+        <path d="M15 17c0-6 18-6 18 0 0 14-5 24-9 29-4-5-9-15-9-29z" />
+        <path d="M16 24c5 3 11 3 16 0M18 32c4 2.5 8 2.5 12 0" />
+        <path d="M21 8h6v4h-6z" />
+      </symbol>
+      <symbol id="i-home" viewBox="0 0 48 48">
+        <path d="M6 23L24 8l18 15" />
+        <path d="M11 20v20h26V20" />
+        <path d="M20 40V29h8v11" />
+      </symbol>
+      <symbol id="i-sun" viewBox="0 0 48 48">
+        <circle cx="24" cy="24" r="8" />
+        <path
+          d="M24 6v5M24 37v5M6 24h5M37 24h5M11.5 11.5l3.5 3.5M33 33l3.5 3.5M11.5 36.5L15 33M33 15l3.5-3.5"
+        />
+      </symbol>
+      <symbol id="i-sparkle" viewBox="0 0 48 48">
+        <path d="M24 6l4 12 12 4-12 4-4 12-4-12-12-4 12-4z" />
+      </symbol>
+      <symbol id="i-shield" viewBox="0 0 48 48">
+        <path d="M24 5l15 5v11c0 9-6 16-15 20C15 37 9 30 9 21V10z" />
+        <path d="M17 23l5 5 9-10" />
+      </symbol>
+      <symbol id="i-leaf" viewBox="0 0 48 48">
+        <path d="M10 38C8 22 18 9 40 8c1 22-10 32-26 31" />
+        <path d="M10 38c6-10 12-16 22-20" />
+      </symbol>
+      <symbol id="i-bed" viewBox="0 0 48 48">
+        <path d="M6 36V14M6 28h36v8M42 28v-5a6 6 0 0 0-6-6H20v11" />
+        <circle cx="13" cy="23" r="3.5" />
+      </symbol>
+      <symbol id="i-pin" viewBox="0 0 48 48">
+        <path d="M24 43c-9-9-14-16-14-23a14 14 0 0 1 28 0c0 7-5 14-14 23z" />
+        <circle cx="24" cy="20" r="5" />
+      </symbol>
+      <symbol id="i-phone" viewBox="0 0 48 48">
+        <path
+          d="M12 6h8l3 10-5 3a24 24 0 0 0 11 11l3-5 10 3v8c0 2-2 4-4 4C20 40 8 28 8 10c0-2 2-4 4-4z"
+        />
+      </symbol>
+      <symbol id="i-mail" viewBox="0 0 48 48">
+        <rect x="6" y="10" width="36" height="28" rx="3" />
+        <path d="M7 13l17 13 17-13" />
+      </symbol>
+      <symbol id="i-clock" viewBox="0 0 48 48">
+        <circle cx="24" cy="24" r="17" />
+        <path d="M24 13v11l8 5" />
+      </symbol>
+    </svg>
+
+    <!-- Cabecera global con enlaces a las páginas y al portal familiar. -->
+    <header class="site-header">
+      <div class="container site-header__inner">
+        <a
+          class="brand"
+          href="index.html"
+          aria-label="Casa Trompo, ir al inicio"
+        >
+          <span class="logo-mark" aria-hidden="true"></span>
+          <span class="brand__text">
+            <span class="brand__kicker">Hogar geriátrico</span>
+            <span class="brand__name">Casa Trompo</span>
+          </span>
+        </a>
+
+        <button
+          class="nav-toggle"
+          type="button"
+          aria-expanded="false"
+          aria-controls="menu"
+          aria-label="Abrir menú"
+        >
+          <span class="nav-toggle__bars" aria-hidden="true"></span>
+        </button>
+
+        <div class="site-nav" id="menu">
+          <nav aria-label="Principal">
+            <ul class="site-nav__links">
+              <li><a href="index.html">Inicio</a></li>
+              <li><a href="nosotros.html" aria-current="page">Nosotros</a></li>
+              <li><a href="contacto.html">Contacto</a></li>
+            </ul>
+          </nav>
+          <div class="site-nav__actions">
+            <a class="btn btn--outline btn--small" href="login.html"
+              >Iniciar Sesión</a
+            >
+            <a class="btn btn--primary btn--small" href="registro.html"
+              >Registrarse</a
+            >
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- Contenido principal que presenta la filosofía, los espacios y el equipo del hogar. -->
+    <main id="contenido">
+      <!-- Presentación de la filosofía de cuidado y la historia que inspira a Casa Trompo. -->
+      <section class="page-hero" aria-labelledby="filosofia-titulo">
+        <div class="container about-intro">
+          <div>
+            <h1 id="filosofia-titulo">
+              Cada persona que llega trae una historia. Nosotros la honramos.
+            </h1>
+            <p class="lead">
+              Casa Trompo nació de una idea simple: quien ha vivido tanto merece
+              volver a sentir la calidez, el juego y la seguridad de la
+              infancia.
+            </p>
+            <p>
+              Por eso no tenemos pasillos fríos ni horarios de institución.
+              Tenemos una casa, un jardín y tiempo para escuchar. Cada residente
+              decide cómo quiere pasar su tarde, y alguien siempre está cerca
+              para acompañarlo.
+            </p>
+            <p class="script">
+              aquí nadie se queda esperando: todos vuelven a casa
+            </p>
+          </div>
+
+          <figure class="arch">
+            <img
+              src="img/pareja.jpg"
+              width="664"
+              height="630"
+              alt="Una pareja de abuelos abrazados, de espaldas, mirando el atardecer en el campo, con una muñeca de vestido rosado a su lado"
+            />
+          </figure>
+        </div>
+      </section>
+
+      <!-- Misión y visión que describen el propósito y la proyección del hogar. -->
+      <section class="section" aria-labelledby="mision-titulo">
+        <div class="container">
+          <div class="section-head">
+            <h2 id="mision-titulo">Misión y visión</h2>
+          </div>
+
+          <div class="mv-grid">
+            <article class="mv-card">
+              <div class="icon-badge">
+                <svg class="icon" aria-hidden="true">
+                  <use href="#i-home" />
+                </svg>
+              </div>
+              <h3>Nuestra misión</h3>
+              <p>
+                Acompañar a las personas mayores con respeto, cariño y atención
+                profesional, en un hogar donde puedan jugar, recordar y sentirse
+                seguras cada día.
+              </p>
+            </article>
+
+            <article class="mv-card">
+              <div class="icon-badge icon-badge--gold">
+                <svg class="icon" aria-hidden="true"><use href="#i-sun" /></svg>
+              </div>
+              <h3>Nuestra visión</h3>
+              <p>
+                Ser el hogar de campo de referencia en la región por su trato
+                humano: un lugar donde las familias encuentran tranquilidad y
+                los residentes encuentran alegría.
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- Valores cotidianos que orientan el trato y las actividades de cuidado. -->
+      <section class="section values-band" aria-labelledby="valores-titulo">
+        <div class="container">
+          <div class="section-head">
+            <h2 id="valores-titulo">Lo que nos importa</h2>
+            <p class="lead">
+              Seis valores que se notan en los gestos pequeños de cada día.
+            </p>
+          </div>
+
+          <ul class="values">
+            <li class="value">
+              <span class="icon-badge"
+                ><i class="fa-solid fa-heart" aria-hidden="true"></i
+              ></span>
+              <div>
+                <h3>Ternura</h3>
+                <p>Un gesto amable antes que cualquier protocolo.</p>
+              </div>
+            </li>
+            <li class="value">
+              <span class="icon-badge"
+                ><i class="fa-solid fa-shield-halved" aria-hidden="true"></i
+              ></span>
+              <div>
+                <h3>Respeto</h3>
+                <p>Cada historia de vida se escucha y se honra.</p>
+              </div>
+            </li>
+            <li class="value">
+              <span class="icon-badge"
+                ><i class="fa-solid fa-clock-rotate-left" aria-hidden="true"></i
+              ></span>
+              <div>
+                <h3>Memoria</h3>
+                <p>Recordar también es una forma de cuidar.</p>
+              </div>
+            </li>
+            <li class="value">
+              <span class="icon-badge"
+                ><i
+                  class="fa-solid fa-wand-magic-sparkles"
+                  aria-hidden="true"
+                ></i
+              ></span>
+              <div>
+                <h3>Alegría</h3>
+                <p>El juego no es solo cosa de niños.</p>
+              </div>
+            </li>
+            <li class="value">
+              <span class="icon-badge"
+                ><i class="fa-solid fa-house" aria-hidden="true"></i
+              ></span>
+              <div>
+                <h3>Seguridad</h3>
+                <p>Cuidado atento, de día y de noche, sin perder la calidez.</p>
+              </div>
+            </li>
+            <li class="value">
+              <span class="icon-badge"
+                ><i class="fa-solid fa-leaf" aria-hidden="true"></i
+              ></span>
+              <div>
+                <h3>Naturaleza</h3>
+                <p>Aire limpio, sombra de árboles y un atardecer cada tarde.</p>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- Recorrido visual por los espacios de convivencia, descanso y naturaleza. -->
+      <section class="section" aria-labelledby="espacios-titulo">
+        <div class="container">
+          <div class="section-head">
+            <h2 id="espacios-titulo">Nuestros Espacios</h2>
+            <p class="lead">
+              Un recorrido por la casa, las habitaciones y los jardines.
+            </p>
+          </div>
+
+          <!-- Las imágenes son recortes de la ilustración. Cámbialas por fotos reales del hogar. -->
+          <div class="spaces">
+            <figure class="space space--tall">
+              <img
+                src="img/casa.jpg"
+                width="470"
+                height="260"
+                loading="lazy"
+                class="space__image--house"
+                alt="La casa campestre de madera con sus ventanas iluminadas, entre árboles y flores"
+              />
+              <figcaption>
+                <strong>La casa campestre</strong
+                ><span>Corredores amplios para sentarse a ver la tarde.</span>
+              </figcaption>
+            </figure>
+
+            <figure class="space space--placeholder">
+              <div
+                class="photo-placeholder"
+                role="img"
+                aria-label="Espacio reservado para una foto de una habitación"
+              >
+                <svg class="icon" aria-hidden="true"><use href="#i-bed" /></svg>
+                <span>Foto de una habitación</span>
+              </div>
+              <figcaption>
+                <strong>Habitaciones acogedoras</strong
+                ><span
+                  >Cobijas tejidas, luz suave y objetos de cada residente.</span
+                >
+              </figcaption>
+            </figure>
+
+            <figure class="space">
+              <img
+                src="img/jardin.jpg"
+                width="600"
+                height="230"
+                loading="lazy"
+                alt="Un sendero de tierra que atraviesa un prado con flores silvestres"
+              />
+              <figcaption>
+                <strong>Zonas verdes</strong
+                ><span
+                  >Jardín, huerta y senderos planos para caminar con
+                  calma.</span
+                >
+              </figcaption>
+            </figure>
+          </div>
+        </div>
+      </section>
+
+      <!-- Presentación de ejemplo del equipo y de sus funciones en la casa. -->
+      <section class="section section--sand" aria-labelledby="equipo-titulo">
+        <div class="container">
+          <div class="section-head section-head--center">
+            <h2 id="equipo-titulo">La Familia que Cuida</h2>
+            <p class="lead">
+              Personas con vocación que llegan cada mañana a casa, no a una
+              institución.
+            </p>
+          </div>
+
+          <!-- Nombres y frases de ejemplo. Sustituye los círculos con iniciales por <img> con la foto de cada persona. -->
+          <div class="team-grid">
+            <article class="member">
+              <div class="avatar avatar--gold" aria-hidden="true">ME</div>
+              <h3>Marta Elena Ruiz</h3>
+              <p class="member__role">Directora de la casa</p>
+              <p class="member__quote">
+                “Me gusta saber cómo amaneció cada uno.”
+              </p>
+            </article>
+
+            <article class="member">
+              <div class="avatar avatar--blue" aria-hidden="true">HC</div>
+              <h3>Hernán Castaño</h3>
+              <p class="member__role">Cuidador de día</p>
+              <p class="member__quote">
+                “Una buena conversación cura más de lo que parece.”
+              </p>
+            </article>
+
+            <article class="member">
+              <div class="avatar avatar--cream" aria-hidden="true">LP</div>
+              <h3>Luz Dary Peña</h3>
+              <p class="member__role">Talleres de memoria y juego</p>
+              <p class="member__quote">
+                “El trompo nunca se olvida cómo girar.”
+              </p>
+            </article>
+
+            <article class="member">
+              <div class="avatar avatar--brown" aria-hidden="true">AQ</div>
+              <h3>Andrés Quintero</h3>
+              <p class="member__role">Cocina de la casa</p>
+              <p class="member__quote">“Cocino lo que cocinaba su mamá.”</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- Invitación para conocer los espacios y coordinar una visita. -->
+      <section class="section" aria-labelledby="invitacion-titulo">
+        <div class="container">
+          <div class="cta-band">
+            <div>
+              <h2 id="invitacion-titulo">Ven a conocernos</h2>
+              <p>
+                La mejor forma de entender Casa Trompo es recorrerla.
+                Coordinamos la visita a la hora que te quede mejor.
+              </p>
+            </div>
+            <a class="btn btn--cream" href="contacto.html?motivo=visita"
+              >Agendar una visita</a
+            >
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Pie global con información de contacto, navegación secundaria y derechos. -->
+    <footer class="site-footer">
+      <div class="container footer-grid">
+        <div class="footer-brand">
+          <a
+            class="brand"
+            href="index.html"
+            aria-label="Casa Trompo, ir al inicio"
+          >
+            <span class="logo-mark" aria-hidden="true"></span>
+            <span class="brand__text">
+              <span class="brand__kicker">Hogar geriátrico</span>
+              <span class="brand__name">Casa Trompo</span>
+            </span>
+          </a>
+          <p class="script">donde la infancia vuelve a casa</p>
+        </div>
+
+        <div>
+          <h3>Contacto</h3>
+          <ul class="footer-list">
+            <li>
+              <svg class="icon" aria-hidden="true"><use href="#i-pin" /></svg
+              ><span>Vereda El Trompo, a 20 minutos del casco urbano</span>
+            </li>
+            <li>
+              <svg class="icon" aria-hidden="true"><use href="#i-phone" /></svg
+              ><a href="tel:+573000000000">+57 300 000 0000</a>
+            </li>
+            <li>
+              <svg class="icon" aria-hidden="true"><use href="#i-mail" /></svg
+              ><a href="mailto:contacto@casatrompo.com"
+                >contacto@casatrompo.com</a
+              >
+            </li>
+            <li>
+              <svg class="icon" aria-hidden="true"><use href="#i-clock" /></svg
+              ><span>Visitas todos los días, de 9:00 a. m. a 6:00 p. m.</span>
+            </li>
+          </ul>
+        </div>
+
+        <nav aria-label="Navegación del pie de página">
+          <h3>Navegación</h3>
+          <ul class="footer-list">
+            <li><a href="index.html">Inicio</a></li>
+            <li><a href="nosotros.html">Nosotros</a></li>
+            <li><a href="contacto.html">Contacto</a></li>
+          </ul>
+        </nav>
+
+        <nav aria-label="Portal de familias">
+          <h3>Portal de familias</h3>
+          <ul class="footer-list">
+            <li><a href="login.html">Iniciar Sesión</a></li>
+            <li><a href="registro.html">Registrarse</a></li>
+          </ul>
+        </nav>
+      </div>
+      <div class="container footer-bottom">
+        <p>
+          © <span data-year>2026</span> CL Solutions. Todos los derechos
+          reservados.
+        </p>
+      </div>
+    </footer>
+
+    <!-- Comportamientos compartidos: accesibilidad, navegación y elementos del pie. -->
+    <script src="js/main.js"></script>
+  </body>
+</html>
