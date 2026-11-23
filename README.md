@@ -1,5 +1,6 @@
-<div align="center">
-  <img src="docs/assets/logo-cl-solutions.jpeg" alt="CL Solutions" width="110" />
+<p align="center">
+<img width="200" alt="Logo Empresa v2" src="https://github.com/user-attachments/assets/5b3c0396-ca2c-4451-9047-8d8a835d8087" />
+</p>
   <h1>Hogar Geriátrico Casa Trompo — Portal Web y Sistema ERP</h1>
   <p><strong>Desarrollado por CL Solutions</strong> | Accesibilidad WCAG AAA | Cumplimiento Ley 1581</p>
 </div>
