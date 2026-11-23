@@ -1,0 +1,226 @@
+/* Ajustes responsive: debe cargarse despues de los estilos de cada pagina. */
+@media (max-width: 1080px) {
+  .footer-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+  .team-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 959px) {
+  .nav-toggle {
+    display: inline-flex;
+  }
+  .site-nav {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    display: none;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 1.25rem;
+    padding: 1rem 1.25rem 1.75rem;
+    background: var(--color-bg);
+    color: var(--color-ink);
+    border-top: 1px solid var(--color-line);
+    box-shadow: 0 24px 30px -20px rgba(59, 47, 47, 0.5);
+  }
+  .site-header.is-open .site-nav {
+    display: flex;
+  }
+  .site-nav__links {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
+  }
+  .site-nav__links li + li {
+    border-top: 1px solid var(--color-line);
+  }
+  .site-nav__links a {
+    display: block;
+    padding: 0.95rem 0.25rem;
+    font-size: 1.2rem;
+    background-image: none;
+  }
+  .site-nav__links a[aria-current="page"] {
+    color: var(--color-accent-deep);
+  }
+  .site-nav__actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .site-nav__actions .btn {
+    width: 100%;
+    min-height: 54px;
+  }
+}
+
+@media (max-width: 900px) {
+  .essence-grid,
+  .mv-grid,
+  .values {
+    grid-template-columns: 1fr;
+  }
+  .essence-card:nth-child(2) {
+    margin-top: 0;
+  }
+  .album-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .testimonials {
+    grid-template-columns: 1fr;
+  }
+  .quote--featured {
+    grid-row: auto;
+  }
+  .about-intro,
+  .contact-grid {
+    grid-template-columns: 1fr;
+  }
+  .about-intro .arch {
+    max-width: 26rem;
+    margin-inline: auto;
+  }
+  .spaces {
+    grid-template-columns: 1fr;
+    grid-template-rows: none;
+  }
+  .space,
+  .space--tall {
+    grid-row: auto;
+    min-height: 280px;
+  }
+  .auth-split {
+    grid-template-columns: 1fr;
+  }
+  .auth-visual {
+    min-height: 260px;
+  }
+  .auth-visual__text {
+    margin-top: auto;
+  }
+  .auth-visual__text p:last-child {
+    display: none;
+  }
+}
+
+@media (max-width: 760px) {
+  .hero {
+    align-items: stretch;
+    text-align: center;
+  }
+  .hero__bg {
+    top: auto;
+    height: 64%;
+    -webkit-mask-image: linear-gradient(180deg, transparent 0, #000 26%);
+    mask-image: linear-gradient(180deg, transparent 0, #000 26%);
+  }
+  .hero__bg img {
+    object-position: 80% 50%;
+  }
+  .hero__scrim {
+    background: linear-gradient(
+      180deg,
+      rgba(59, 47, 47, 0.55) 0%,
+      rgba(59, 47, 47, 0.15) 45%,
+      rgba(59, 47, 47, 0) 60%,
+      rgba(59, 47, 47, 0.55) 100%
+    );
+  }
+  .hero__content {
+    display: flex;
+    flex-direction: column;
+    padding-block: calc(var(--header-h) + 1rem) 2rem;
+  }
+  /* En movil: titulo arriba y botones abajo, para que la pareja quede a la vista en el centro */
+  .hero__text {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    align-items: center;
+    margin-inline: auto;
+  }
+  .hero__text .logo-mark {
+    width: 68px;
+    height: 68px;
+  }
+  .hero__lead {
+    display: none;
+  }
+  .hero__tagline {
+    margin-bottom: 0;
+  }
+  .hero__actions {
+    width: 100%;
+    max-width: 20rem;
+    margin: auto auto 0;
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .spark:nth-of-type(n + 2) {
+    display: none;
+  }
+}
+
+@media (max-width: 640px) {
+  body {
+    font-size: 1.0625rem;
+  }
+  .album-grid {
+    grid-template-columns: 1fr;
+    max-width: 24rem;
+    margin-inline: auto;
+  }
+  .team-grid {
+    grid-template-columns: 1fr;
+  }
+  .footer-grid {
+    grid-template-columns: 1fr;
+    padding-block: 3rem 2rem;
+  }
+  .form-row,
+  .contact-actions {
+    grid-template-columns: 1fr;
+  }
+  .cta-band {
+    text-align: center;
+    justify-content: center;
+  }
+  .cta-band .btn {
+    width: 100%;
+  }
+  .brand__kicker {
+    font-size: 0.6rem;
+  }
+  .brand__name {
+    font-size: 1.3rem;
+  }
+  .hero h1 {
+    font-size: clamp(2.4rem, 10vw, 3.2rem);
+    white-space: normal;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    transition-duration: 0.01ms !important;
+  }
+  .hero [data-seq],
+  .spark {
+    animation: none !important;
+  }
+  .spark {
+    opacity: 0.7;
+  }
+  .btn:hover,
+  .polaroid:hover {
+    transform: none;
+  }
+}
