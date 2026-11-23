@@ -355,5 +355,12 @@
 
     <!-- Comportamientos compartidos: accesibilidad, preselección y validación del formulario. -->
     <script src="js/main.js"></script>
-  </body>
+    <!-- Contenedor accesible para notificaciones de envío (WCAG AAA) -->
+  <div id="contactFeedback" class="mt-3" role="status" aria-live="polite"></div>
+
+  <!-- Comportamientos compartidos: accesibilidad y navegación -->
+  <script src="js/main.js"></script>
+  <!-- Lógica dedicada del formulario de contacto -->
+  <script type="module" src="js/contacto.js"></script>
+</body>
 </html>
