@@ -1,4 +1,4 @@
-/* Casa Trompo · comportamiento compartido (JavaScript vanilla) */
+/* Casa Trompo comportamiento compartido  */
 (() => {
   "use strict";
 
@@ -7,7 +7,7 @@
     ...scope.querySelectorAll(selector),
   ];
 
-  /* ---------- Preferencias de accesibilidad compartidas entre páginas ---------- */
+  /*  Preferencias de accesibilidad compartidas entre páginas  */
   const accessibilityKey = "casatrompo:accesibilidad";
   const accessibilitySettings = [
     "high-contrast",
@@ -31,7 +31,6 @@
     try {
       localStorage.setItem(accessibilityKey, JSON.stringify(a11ySettings));
     } catch (_) {
-      /* Sin almacenamiento disponible: se mantiene activo durante la sesión. */
     }
   };
 
