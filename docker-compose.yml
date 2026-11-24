@@ -4,7 +4,7 @@ services:
     container_name: casa_trompo_db
     restart: unless-stopped
     environment:
-      MYSQL_ROOT_PASSWORD: ${DB_PASSWORD:-cambiar_esta_clave_mysql}
+      MYSQL_ROOT_PASSWORD: ${DB_PASSWORD:-CasaTrompo2311*}
       MYSQL_DATABASE: ${DB_NAME:-casa_trompo_db}
     command:
       - --character-set-server=utf8mb4
@@ -15,7 +15,7 @@ services:
       - mysql_data:/var/lib/mysql
       - ./database:/docker-entrypoint-initdb.d:ro
     healthcheck:
-      test: ["CMD", "mysqladmin", "ping", "-h", "localhost", "-u", "root", "-p${DB_PASSWORD:CasaTrompo2311*}"]
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost", "-u", "root", "-p${DB_PASSWORD:-CasaTrompo2311*}"]
       interval: 5s
       timeout: 5s
       retries: 12
