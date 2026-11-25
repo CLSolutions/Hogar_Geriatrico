@@ -1,13 +1,13 @@
 DROP DATABASE IF EXISTS casa_trompo_db;
 CREATE DATABASE casa_trompo_db;
 USE casa_trompo_db;
--- SEGURIDAD Y USUARIOS
+
 -- ______________________________________________ Rol ______________________________________________
 CREATE TABLE rol (
     id_rol INT AUTO_INCREMENT NOT NULL PRIMARY KEY,
     nombre_rol VARCHAR(20) NOT NULL,
     descripcion_rol VARCHAR(100) NOT NULL,
-    estado ENUM('ACTIVO', 'INACTIVO') NOT NULL DEFAULT 'ACTIVO'
+    estado ENUM('ACTIVO', 'INACTIVO', 'SUSPENDIDO') NOT NULL DEFAULT 'ACTIVO'
 );
 
 -- --------------Usuario (personal, administrativos, familiares con acceso)-----------------
@@ -27,7 +27,7 @@ CREATE TABLE usuario (
     direccion VARCHAR(40) NULL,
     correo VARCHAR(120) NOT NULL UNIQUE,
     contrasena_hash VARCHAR(255) NOT NULL,
-    estado ENUM('ACTIVO', 'INACTIVO') NOT NULL DEFAULT 'ACTIVO',
+    estado ENUM('ACTIVO', 'INACTIVO', 'SUSPENDIDO') NOT NULL DEFAULT 'ACTIVO',
     fecha_ingreso DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP
 );
 
@@ -49,28 +49,9 @@ CREATE TABLE residente (
     fecha_salida DATE NULL,
     motivo_salida ENUM('RETIRO_FAMILIAR', 'TRASLADO', 'FALLECIMIENTO') NULL,
     observaciones VARCHAR(255) NULL,
-    estado ENUM('ACTIVO', 'INACTIVO') NOT NULL DEFAULT 'ACTIVO'
-);
-
--- --------------Familiar / Acudiente-----------------
--- id_usuario es NULL cuando el familiar es solo un contacto sin cuenta.
--- Si tiene cuenta, su usuario debe tener el rol FAMILIAR.
-CREATE TABLE familiar (
-    id_familiar INT AUTO_INCREMENT PRIMARY KEY,
-    id_residente INT NOT NULL,
-    id_usuario INT NULL,
-    FOREIGN KEY (id_residente)
-        REFERENCES residente (id_residente),
-    FOREIGN KEY (id_usuario)
-        REFERENCES usuario (id_usuario),
-    nombre VARCHAR(30) NOT NULL,
-    apellido VARCHAR(30) NOT NULL,
-    parentesco VARCHAR(30) NOT NULL,
-    telefono VARCHAR(20) NOT NULL,
-    correo VARCHAR(120) NULL,
-    direccion VARCHAR(60) NULL,
-    es_responsable BOOLEAN NOT NULL DEFAULT FALSE,
-    es_contacto_emergencia BOOLEAN NOT NULL DEFAULT FALSE
+    estado ENUM('ACTIVO', 'INACTIVO', 'SUSPENDIDO') NOT NULL DEFAULT 'ACTIVO'
+    id_usuario INT NOT NULL, -- Acudiente/familiar
+    FOREIGN KEY (id_residente) REFERENCES residente (id_residente),
 );
 
 -- --------------Habitacion-----------------
@@ -112,7 +93,7 @@ CREATE TABLE historia_clinica (
 CREATE TABLE signos_vitales (
     id_signos INT AUTO_INCREMENT PRIMARY KEY,
     id_residente INT NOT NULL,
-    id_usuario INT NOT NULL COMMENT 'Quien registra (enfermería)',
+    id_usuario INT NOT NULL, -- Enfermera
     FOREIGN KEY (id_residente) REFERENCES residente (id_residente),
     FOREIGN KEY (id_usuario) REFERENCES usuario (id_usuario),
     fecha_registro DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
@@ -147,7 +128,7 @@ CREATE TABLE categoria (
     id_categoria INT AUTO_INCREMENT PRIMARY KEY,
     nombre_cat VARCHAR(40) NOT NULL,
     descripcion_cat VARCHAR(100) NOT NULL,
-    estado ENUM('ACTIVO', 'INACTIVO') NOT NULL DEFAULT 'ACTIVO'
+    estado ENUM('ACTIVO', 'INACTIVO', 'SUSPENDIDO') NOT NULL DEFAULT 'ACTIVO'
 );
 
 -- --------------Proveedor-----------------
@@ -158,7 +139,7 @@ CREATE TABLE proveedor (
     telefono VARCHAR(20) NOT NULL,
     correo VARCHAR(120) NULL,
     direccion VARCHAR(60) NULL,
-    estado ENUM('ACTIVO', 'INACTIVO') NOT NULL DEFAULT 'ACTIVO'
+    estado ENUM('ACTIVO', 'INACTIVO', 'SUSPENDIDO') NOT NULL DEFAULT 'ACTIVO'
 );
 
 -- --------------Insumo (producto del inventario)-----------------
@@ -168,12 +149,12 @@ CREATE TABLE insumo (
     FOREIGN KEY (id_categoria) REFERENCES categoria (id_categoria),
     nombre VARCHAR(60) NOT NULL,
     descripcion VARCHAR(100) NULL,
-    unidad_medida VARCHAR(20) NOT NULL COMMENT 'tabletas, ml, unidad, caja...',
+    unidad_medida VARCHAR(20) NOT NULL,
     stock_actual INT NOT NULL DEFAULT 0,
     stock_minimo INT NOT NULL DEFAULT 0,
     fecha_vencimiento DATE NULL,
     requiere_formula BOOLEAN NOT NULL DEFAULT FALSE,
-    estado ENUM('ACTIVO', 'INACTIVO') NOT NULL DEFAULT 'ACTIVO'
+    estado ENUM('ACTIVO', 'INACTIVO', 'SUSPENDIDO') NOT NULL DEFAULT 'ACTIVO'
 );
 
 -- --------------Compra (entrada de insumos)-----------------
@@ -231,7 +212,7 @@ CREATE TABLE administracion_medicamento (
 -- --------------Actividad (terapia, juegos, manualidades...)-----------------
 CREATE TABLE actividad (
     id_actividad INT AUTO_INCREMENT PRIMARY KEY,
-    id_usuario INT NULL COMMENT 'Responsable',
+    id_usuario INT, -- Responsable
     FOREIGN KEY (id_usuario) REFERENCES usuario (id_usuario),
     nombre VARCHAR(60) NOT NULL,
     descripcion VARCHAR(150) NULL,
@@ -257,7 +238,7 @@ CREATE TABLE visita (
     id_familiar INT NULL,
     FOREIGN KEY (id_residente) REFERENCES residente (id_residente),
     FOREIGN KEY (id_familiar) REFERENCES familiar (id_familiar),
-    nombre_visitante VARCHAR(60) NULL COMMENT 'Si no es familiar registrado',
+    nombre_visitante VARCHAR(60) NULL , --Por si no es un familiar registrado
     fecha_hora_entrada DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
     fecha_hora_salida DATETIME NULL,
     observaciones VARCHAR(150) NULL
@@ -289,7 +270,7 @@ CREATE TABLE pago (
     concepto VARCHAR(80) NOT NULL COMMENT 'Mensualidad, servicio extra...',
     periodo_mes TINYINT NULL,
     periodo_anio SMALLINT NULL,
-    valor DECIMAL(12,2) NOT NULL,
+    valor DECIMAL(12,4) NOT NULL,
     metodo_pago ENUM('EFECTIVO', 'TRANSFERENCIA', 'TARJETA') NOT NULL,
     fecha_pago DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
     estado ENUM('PAGADO', 'PENDIENTE', 'VENCIDO') NOT NULL DEFAULT 'PENDIENTE'
