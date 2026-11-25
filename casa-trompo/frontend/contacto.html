@@ -87,6 +87,7 @@
             <ul class="site-nav__links">
               <li><a href="index.html">Inicio</a></li>
               <li><a href="nosotros.html">Nosotros</a></li>
+              <li><a href="eventos.html">Eventos</a></li>
               <li><a href="contacto.html" aria-current="page">Contacto</a></li>
             </ul>
           </nav>
@@ -130,19 +131,36 @@
               data-success="Gracias por escribirnos. Te responderemos lo antes posible."
             >
               <!-- Para conectarlo a tu servidor: agrega method="post" y action="tu-ruta" (PHP o Express) -->
-              <div class="field">
-                <label for="nombre"
-                  >Nombre completo
-                  <span class="req" aria-hidden="true">*</span></label
-                >
-                <input
-                  class="input"
-                  id="nombre"
-                  name="nombre"
-                  type="text"
-                  autocomplete="name"
-                  required
-                />
+              <div class="form-row">
+                <div class="field">
+                  <label for="nombre"
+                    >Nombre
+                    <span class="req" aria-hidden="true">*</span></label
+                  >
+                  <input
+                    class="input"
+                    id="nombre"
+                    name="nombre"
+                    type="text"
+                    autocomplete="given-name"
+                    required
+                  />
+                </div>
+
+                <div class="field">
+                  <label for="apellido"
+                    >Apellido
+                    <span class="req" aria-hidden="true">*</span></label
+                  >
+                  <input
+                    class="input"
+                    id="apellido"
+                    name="apellido"
+                    type="text"
+                    autocomplete="family-name"
+                    required
+                  />
+                </div>
               </div>
 
               <div class="field">
@@ -303,10 +321,15 @@
           </a>
           <p class="script">donde la infancia vuelve a casa</p>
           <div class="footer-social" aria-label="Redes sociales">
-            <i class="fa-brands fa-facebook" aria-hidden="true"></i>
-            <i class="fa-brands fa-square-instagram" aria-hidden="true"></i>
-            <i class="fa-brands fa-tiktok" aria-hidden="true"></i>
-            <i class="fa-brands fa-youtube" aria-hidden="true"></i>
+            <a href="https://www.facebook.com/share/1K6i5qnbYf/" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+              <i class="fa-brands fa-facebook" aria-hidden="true"></i>
+            </a>
+            <a href="https://www.instagram.com/hgcasatrompo/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+              <i class="fa-brands fa-square-instagram" aria-hidden="true"></i>
+            </a>
+            <a href="https://www.youtube.com/channel/UCef9Dt6jhXNS-B6FLd3jZgA" target="_blank" rel="noopener noreferrer" aria-label="YouTube">
+              <i class="fa-brands fa-youtube" aria-hidden="true"></i>
+            </a>
           </div>
         </div>
 
@@ -339,6 +362,7 @@
           <ul class="footer-list">
             <li><a href="index.html">Inicio</a></li>
             <li><a href="nosotros.html">Nosotros</a></li>
+            <li><a href="eventos.html">Eventos</a></li>
             <li><a href="contacto.html">Contacto</a></li>
           </ul>
         </nav>

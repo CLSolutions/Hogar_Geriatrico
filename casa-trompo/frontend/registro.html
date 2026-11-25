@@ -41,17 +41,22 @@
           alt="Una pareja de abuelos abrazados mirando el atardecer en el campo, con un trompo, un carrito y una muñeca a su lado"
         />
 
-        <a
-          class="brand"
-          href="index.html"
-          aria-label="Casa Trompo, volver al inicio"
-        >
-          <span class="logo-mark" aria-hidden="true"></span>
-          <span class="brand__text">
-            <span class="brand__kicker">Hogar geriátrico</span>
-            <span class="brand__name">Casa Trompo</span>
-          </span>
-        </a>
+        <div class="auth-visual__brand">
+          <a
+            class="brand"
+            href="index.html"
+            aria-label="Casa Trompo, volver al inicio"
+          >
+            <span class="logo-mark" aria-hidden="true"></span>
+            <span class="brand__text">
+              <span class="brand__kicker">Hogar geriátrico</span>
+              <span class="brand__name">Casa Trompo</span>
+            </span>
+          </a>
+          <a class="btn btn--outline btn--small" href="index.html"
+            >Volver al inicio</a
+          >
+        </div>
 
         <div class="auth-visual__text">
           <p class="script">Bienvenidos a la familia</p>
@@ -74,19 +79,36 @@
           >
             <!-- Para conectarlo a tu servidor: agrega method="post" y action="tu-ruta" (PHP o Express) -->
             <!-- Datos personales y relación con la persona residente. -->
-            <div class="field">
-              <label for="nombre"
-                >Nombre completo del acudiente
-                <span class="req" aria-hidden="true">*</span></label
-              >
-              <input
-                class="input"
-                id="nombre"
-                name="nombre"
-                type="text"
-                autocomplete="name"
-                required
-              />
+            <div class="form-row">
+              <div class="field">
+                <label for="nombre"
+                  >Nombre
+                  <span class="req" aria-hidden="true">*</span></label
+                >
+                <input
+                  class="input"
+                  id="nombre"
+                  name="nombre"
+                  type="text"
+                  autocomplete="given-name"
+                  required
+                />
+              </div>
+
+              <div class="field">
+                <label for="apellido"
+                  >Apellido
+                  <span class="req" aria-hidden="true">*</span></label
+                >
+                <input
+                  class="input"
+                  id="apellido"
+                  name="apellido"
+                  type="text"
+                  autocomplete="family-name"
+                  required
+                />
+              </div>
             </div>
 
             <div class="field">
@@ -104,20 +126,43 @@
               />
             </div>
 
+            <div class="field">
+              <label for="telefono"
+                >Teléfono <span class="req" aria-hidden="true">*</span></label
+              >
+              <input
+                class="input"
+                id="telefono"
+                name="telefono"
+                type="tel"
+                autocomplete="tel"
+                inputmode="tel"
+                required
+              />
+            </div>
+
             <div class="form-row">
               <div class="field">
-                <label for="telefono"
-                  >Teléfono <span class="req" aria-hidden="true">*</span></label
+                <label for="tipo-documento"
+                  >Tipo de documento
+                  <span class="req" aria-hidden="true">*</span></label
                 >
-                <input
-                  class="input"
-                  id="telefono"
-                  name="telefono"
-                  type="tel"
-                  autocomplete="tel"
-                  inputmode="tel"
+                <select
+                  class="select"
+                  id="tipo-documento"
+                  name="tipo_documento"
                   required
-                />
+                >
+                  <option value="" disabled selected>
+                    Selecciona una opción
+                  </option>
+                  <option value="cc">Cédula de ciudadanía</option>
+                  <option value="ti">Tarjeta de identidad</option>
+                  <option value="ce">Cédula de extranjería</option>
+                  <option value="pasaporte">Pasaporte</option>
+                  <option value="ppt">Permiso por Protección Temporal (PPT)</option>
+                  <option value="otro">Otro</option>
+                </select>
               </div>
 
               <div class="field">
@@ -130,10 +175,7 @@
                   id="documento"
                   name="documento"
                   type="text"
-                  inputmode="numeric"
                   autocomplete="off"
-                  pattern="[0-9]{5,15}"
-                  title="Escribe solo números, sin puntos ni espacios"
                   required
                 />
               </div>
@@ -171,7 +213,7 @@
                   autocomplete="new-password"
                   minlength="8"
                   required
-                  aria-describedby="password-ayuda"
+                  aria-describedby="password-ayuda password-strength-label"
                 />
                 <button
                   class="password__toggle"
@@ -183,7 +225,29 @@
                   Mostrar
                 </button>
               </div>
-              <span class="hint" id="password-ayuda">Mínimo 8 caracteres.</span>
+              <span class="hint" id="password-ayuda"
+                >Mínimo 8 caracteres. Combina mayúsculas, minúsculas, números y
+                símbolos para mejorar la seguridad.</span
+              >
+              <div
+                class="password-strength"
+                id="password-strength"
+                role="meter"
+                aria-label="Seguridad de la contraseña"
+                aria-valuemin="0"
+                aria-valuemax="6"
+                aria-valuenow="0"
+                aria-valuetext="Sin evaluar"
+                data-strength="empty"
+              >
+                <span class="password-strength__bar"></span>
+              </div>
+              <div class="password-strength__meta">
+                <span>Seguridad de la contraseña</span>
+                <span id="password-strength-label" aria-live="polite"
+                  >Escribe una contraseña</span
+                >
+              </div>
             </div>
 
             <div class="field">

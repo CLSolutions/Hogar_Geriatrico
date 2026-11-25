@@ -187,6 +187,59 @@
   const password = $("#password");
   const confirm = $("#confirm");
   const confirmError = $("#confirm-error");
+  const passwordStrength = $("#password-strength");
+  const passwordStrengthLabel = $("#password-strength-label");
+
+  const updatePasswordStrength = () => {
+    if (!password || !passwordStrength || !passwordStrengthLabel) return;
+    const strengthBar = $(".password-strength__bar", passwordStrength);
+    if (!strengthBar) return;
+
+    const value = password.value;
+    if (!value) {
+      passwordStrength.setAttribute("aria-valuenow", "0");
+      passwordStrength.setAttribute("aria-valuetext", "Sin evaluar");
+      passwordStrength.dataset.strength = "empty";
+      strengthBar.style.width = "0";
+      passwordStrengthLabel.textContent = "Escribe una contraseña";
+      return;
+    }
+
+    let score = 1;
+    if (value.length >= 8) score++;
+    if (value.length >= 12) score++;
+    if (/[a-z]/.test(value) && /[A-Z]/.test(value)) score++;
+    if (/\d/.test(value)) score++;
+    if (/[^A-Za-z0-9]/.test(value)) score++;
+
+    const levels = [
+      "",
+      "Muy débil",
+      "Débil",
+      "Aceptable",
+      "Buena",
+      "Fuerte",
+      "Muy fuerte",
+    ];
+    const strength =
+      score <= 2
+        ? "weak"
+        : score <= 3
+          ? "fair"
+          : score === 4
+            ? "good"
+            : "strong";
+
+    passwordStrength.setAttribute("aria-valuenow", String(score));
+    passwordStrength.setAttribute("aria-valuetext", levels[score]);
+    passwordStrength.dataset.strength = strength;
+    strengthBar.style.width = `${(score / 6) * 100}%`;
+    passwordStrengthLabel.textContent = levels[score];
+  };
+
+  if (password && passwordStrength) {
+    password.addEventListener("input", updatePasswordStrength);
+  }
 
   if (password && confirm) {
     const check = () => {
@@ -199,6 +252,12 @@
     };
     password.addEventListener("input", check);
     confirm.addEventListener("input", check);
+    password.form?.addEventListener("reset", () => {
+      window.setTimeout(() => {
+        updatePasswordStrength();
+        check();
+      }, 0);
+    });
   }
 
   /* ---------- Contacto: preseleccionar el motivo (?motivo=visita) ---------- */
