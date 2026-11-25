@@ -1,0 +1,230 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Eventos · Casa Trompo</title>
+    <meta
+      name="description"
+      content="Consulta las actividades y encuentros de Casa Trompo."
+    />
+    <meta name="theme-color" content="#FCEBDC" />
+    <link rel="icon" type="image/png" href="img/Logo_Blanco_NOBG.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Caveat:wght@600&family=Lora:wght@500;600;700&family=Nunito:wght@400;600;700;800&family=Pacifico&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    />
+    <link rel="stylesheet" href="css/General_Styles.css" />
+    <link rel="stylesheet" href="css/eventos.css" />
+    <link rel="stylesheet" href="css/responsive.css" />
+  </head>
+  <body>
+    <a class="skip-link" href="#contenido">Saltar al contenido</a>
+
+    <svg class="svg-symbols" aria-hidden="true" focusable="false">
+      <symbol id="i-pin" viewBox="0 0 48 48">
+        <path d="M24 43c-9-9-14-16-14-23a14 14 0 0 1 28 0c0 7-5 14-14 23z" />
+        <circle cx="24" cy="20" r="5" />
+      </symbol>
+      <symbol id="i-phone" viewBox="0 0 48 48">
+        <path
+          d="M12 6h8l3 10-5 3a24 24 0 0 0 11 11l3-5 10 3v8c0 2-2 4-4 4C20 40 8 28 8 10c0-2 2-4 4-4z"
+        />
+      </symbol>
+      <symbol id="i-mail" viewBox="0 0 48 48">
+        <rect x="6" y="10" width="36" height="28" rx="3" />
+        <path d="M7 13l17 13 17-13" />
+      </symbol>
+      <symbol id="i-clock" viewBox="0 0 48 48">
+        <circle cx="24" cy="24" r="17" />
+        <path d="M24 13v11l8 5" />
+      </symbol>
+    </svg>
+
+    <header class="site-header">
+      <div class="container site-header__inner">
+        <a
+          class="brand"
+          href="index.html"
+          aria-label="Casa Trompo, ir al inicio"
+        >
+          <span class="logo-mark" aria-hidden="true"></span>
+          <span class="brand__text">
+            <span class="brand__kicker">Hogar geriátrico</span>
+            <span class="brand__name">Casa Trompo</span>
+          </span>
+        </a>
+
+        <button
+          class="nav-toggle"
+          type="button"
+          aria-expanded="false"
+          aria-controls="menu"
+          aria-label="Abrir menú"
+        >
+          <span class="nav-toggle__bars" aria-hidden="true"></span>
+        </button>
+
+        <div class="site-nav" id="menu">
+          <nav aria-label="Principal">
+            <ul class="site-nav__links">
+              <li><a href="index.html">Inicio</a></li>
+              <li><a href="nosotros.html">Nosotros</a></li>
+              <li><a href="eventos.html" aria-current="page">Eventos</a></li>
+              <li><a href="contacto.html">Contacto</a></li>
+            </ul>
+          </nav>
+          <div class="site-nav__actions">
+            <a class="btn btn--outline btn--small" href="login.html"
+              >Iniciar Sesión</a
+            >
+            <a class="btn btn--primary btn--small" href="registro.html"
+              >Registrarse</a
+            >
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <main id="contenido">
+      <section class="events-hero" aria-labelledby="eventos-titulo">
+        <div class="container">
+          <p class="events-hero__eyebrow">Un espacio para compartir</p>
+          <h1 id="eventos-titulo">Eventos de Casa Trompo</h1>
+          <p class="lead">
+            Muy pronto podrás consultar aquí las actividades y encuentros para
+            compartir con nuestros residentes y sus familias.
+          </p>
+        </div>
+      </section>
+
+      <section
+        class="section section--sand events-agenda"
+        aria-labelledby="agenda-titulo"
+      >
+        <div class="container">
+          <div class="events-empty">
+            <svg
+              class="events-empty__calendar"
+              viewBox="0 0 48 48"
+              aria-hidden="true"
+            >
+              <rect x="6" y="10" width="36" height="32" rx="4" />
+              <path d="M15 6v8M33 6v8M6 19h36M15 27h6M27 27h6M15 34h6" />
+            </svg>
+            <h2 id="agenda-titulo">Estamos preparando la agenda</h2>
+            <p>
+              En esta sección publicaremos las fechas, horarios y detalles de
+              los próximos eventos. Si quieres conocer más o coordinar una
+              visita, estaremos felices de atenderte.
+            </p>
+            <a class="btn btn--primary" href="contacto.html"
+              >Contáctanos</a
+            >
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-grid">
+        <div class="footer-brand">
+          <a
+            class="brand"
+            href="index.html"
+            aria-label="Casa Trompo, ir al inicio"
+          >
+            <span class="logo-mark" aria-hidden="true"></span>
+            <span class="brand__text">
+              <span class="brand__kicker">Hogar geriátrico</span>
+              <span class="brand__name">Casa Trompo</span>
+            </span>
+          </a>
+          <p class="script">donde la infancia vuelve a casa</p>
+          <div class="footer-social" aria-label="Redes sociales">
+            <a
+              href="https://www.facebook.com/share/1K6i5qnbYf/"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Facebook"
+            >
+              <i class="fa-brands fa-facebook" aria-hidden="true"></i>
+            </a>
+            <a
+              href="https://www.instagram.com/hgcasatrompo/"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Instagram"
+            >
+              <i class="fa-brands fa-square-instagram" aria-hidden="true"></i>
+            </a>
+            <a
+              href="https://www.youtube.com/channel/UCef9Dt6jhXNS-B6FLd3jZgA"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="YouTube"
+            >
+              <i class="fa-brands fa-youtube" aria-hidden="true"></i>
+            </a>
+          </div>
+        </div>
+
+        <div>
+          <h3>Contacto</h3>
+          <ul class="footer-list">
+            <li>
+              <svg class="icon" aria-hidden="true"><use href="#i-pin" /></svg>
+              <span>Vereda El Trompo, a 20 minutos del casco urbano</span>
+            </li>
+            <li>
+              <svg class="icon" aria-hidden="true"><use href="#i-phone" /></svg>
+              <a href="tel:+573000000000">+57 300 000 0000</a>
+            </li>
+            <li>
+              <svg class="icon" aria-hidden="true"><use href="#i-mail" /></svg>
+              <a href="mailto:contacto@casatrompo.com"
+                >contacto@casatrompo.com</a
+              >
+            </li>
+            <li>
+              <svg class="icon" aria-hidden="true"><use href="#i-clock" /></svg>
+              <span>Visitas todos los días, de 9:00 a. m. a 6:00 p. m.</span>
+            </li>
+          </ul>
+        </div>
+
+        <nav aria-label="Navegación del pie de página">
+          <h3>Navegación</h3>
+          <ul class="footer-list">
+            <li><a href="index.html">Inicio</a></li>
+            <li><a href="nosotros.html">Nosotros</a></li>
+            <li><a href="eventos.html" aria-current="page">Eventos</a></li>
+            <li><a href="contacto.html">Contacto</a></li>
+          </ul>
+        </nav>
+
+        <nav aria-label="Portal de familias">
+          <h3>Portal de familias</h3>
+          <ul class="footer-list">
+            <li><a href="login.html">Iniciar Sesión</a></li>
+            <li><a href="registro.html">Registrarse</a></li>
+          </ul>
+        </nav>
+      </div>
+      <div class="container footer-bottom">
+        <p>
+          © <span data-year>2026</span> CL Solutions. Todos los derechos
+          reservados.
+        </p>
+      </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+  </body>
+</html>

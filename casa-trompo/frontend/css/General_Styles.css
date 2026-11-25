@@ -495,9 +495,11 @@ a:hover {
 }
 .site-footer a {
   color: #f6ebdd;
+  text-decoration: none;
 }
 .site-footer a:hover {
   color: #fff;
+  text-decoration: none;
 }
 .footer-grid {
   display: grid;
@@ -652,6 +654,34 @@ a:hover {
 }
 .password__toggle:hover {
   background: var(--color-accent-soft);
+}
+.password-strength {
+  height: 0.55rem;
+  overflow: hidden;
+  border-radius: 999px;
+  background: var(--color-border);
+}
+.password-strength__bar {
+  display: block;
+  width: 0;
+  height: 100%;
+  background: #a82f08;
+}
+.password-strength[data-strength="fair"] .password-strength__bar {
+  background: #c17a17;
+}
+.password-strength[data-strength="good"] .password-strength__bar {
+  background: #8b8b21;
+}
+.password-strength[data-strength="strong"] .password-strength__bar {
+  background: #39734b;
+}
+.password-strength__meta {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  font-size: 0.9rem;
+  font-weight: 700;
 }
 
 .field-error {
@@ -910,6 +940,55 @@ body.a11y-high-contrast .btn--outline {
   color: #000;
 }
 
+body.a11y-high-contrast .site-header {
+  box-shadow: 0 2px 0 #fff;
+  -webkit-backdrop-filter: none;
+  backdrop-filter: none;
+}
+
+body.a11y-high-contrast .site-header .brand,
+body.a11y-high-contrast .site-header .site-nav__links a {
+  color: #fff;
+}
+
+body.a11y-high-contrast .site-header .logo-mark {
+  background-image: url("../img/Logo_Blanco_NOBG.png");
+}
+
+body.a11y-high-contrast .site-header .btn--outline {
+  border-color: #fff;
+  background: #fff;
+  color: #000;
+}
+
+body.a11y-high-contrast .auth-visual .brand {
+  color: #fff;
+}
+
+body.a11y-high-contrast .auth-visual::after,
+body.a11y-high-contrast .hero__scrim {
+  background: rgba(0, 0, 0, 0.85);
+}
+
+body.a11y-high-contrast .events-hero {
+  background: #fff;
+}
+
+body.a11y-high-contrast .a11y-toggle {
+  border-color: #fff;
+  background: #000;
+  color: #fff;
+}
+
+body.a11y-high-contrast .a11y-toggle:hover {
+  background: #fff;
+  color: #000;
+}
+
+body.a11y-high-contrast :focus-visible {
+  outline-color: currentColor;
+}
+
 body.a11y-high-contrast .input,
 body.a11y-high-contrast .select,
 body.a11y-high-contrast .textarea {
@@ -917,9 +996,18 @@ body.a11y-high-contrast .textarea {
   color: #000;
 }
 
-body.a11y-grayscale > :not(.a11y-toggle):not(.a11y-panel) {
-  filter: grayscale(1) ;
-  z-index: auto;
+body.a11y-high-contrast .input::placeholder,
+body.a11y-high-contrast .textarea::placeholder {
+  color: #000;
+  opacity: 1;
+}
+
+body.a11y-grayscale {
+  background: #eee;
+}
+
+body.a11y-grayscale > * {
+  filter: grayscale(1);
 }
 
 html.a11y-large-text {

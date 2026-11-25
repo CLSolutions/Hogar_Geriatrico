@@ -1,0 +1,50 @@
+.events-hero {
+  padding-block: calc(var(--header-h) + 3.5rem) 4rem;
+  background:
+    radial-gradient(
+      circle at 85% 20%,
+      rgba(217, 119, 54, 0.14),
+      transparent 24rem
+    ),
+    var(--color-bg);
+  text-align: center;
+}
+.events-hero__eyebrow {
+  margin-bottom: 0.75rem;
+  color: var(--color-accent-deep);
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+.events-hero .lead {
+  max-width: 42rem;
+  margin-inline: auto;
+}
+.events-agenda {
+  padding-top: clamp(3rem, 6vw, 5rem);
+}
+.events-empty {
+  max-width: 48rem;
+  margin-inline: auto;
+  padding: clamp(2rem, 6vw, 4rem);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  background: #fff;
+  box-shadow: var(--shadow-soft);
+  text-align: center;
+}
+.events-empty__calendar {
+  width: 4rem;
+  height: 4rem;
+  margin: 0 auto 1.5rem;
+  fill: none;
+  stroke: var(--color-accent-deep);
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 2.5;
+}
+.events-empty p {
+  max-width: 38rem;
+  margin: 0 auto 1.5rem;
+  color: var(--color-ink-soft);
+}

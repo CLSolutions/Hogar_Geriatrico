@@ -23,6 +23,7 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
     />
     <link rel="stylesheet" href="css/General_Styles.css" />
+    <link rel="stylesheet" href="css/registro.css" />
     <link rel="stylesheet" href="css/login.css" />
     <link rel="stylesheet" href="css/responsive.css" />
   </head>
@@ -30,86 +31,105 @@
     <!-- Enlace de acceso rápido para saltar directamente al inicio de sesión. -->
     <a class="skip-link" href="#contenido">Saltar al formulario</a>
 
-    <!-- Fondo decorativo y tarjeta que concentra el acceso al portal familiar. -->
-    <div class="login">
-      <!-- Fondo: recorte del atardecer de la ilustración -->
-      <div class="login__bg" aria-hidden="true">
-        <img src="img/atardecer.jpg" width="1044" height="340" alt="" />
-      </div>
-
-      <a class="btn btn--cream btn--small login__back" href="index.html"
-        >Volver al inicio</a
-      >
-
-      <!-- Encabezado de marca y formulario de ingreso con opción para recordar el correo. -->
-      <main class="login-card" id="contenido">
-        <div class="login-card__head">
-          <span class="logo-mark" aria-hidden="true"></span>
-          <p class="brand-name">Casa Trompo</p>
-          <h1>Bienvenido de nuevo a casa</h1>
+    <!-- Diseño de acceso dividido: formulario a la izquierda e imagen a la derecha. -->
+    <div class="auth-split">
+      <main class="auth-form-wrap login-form-wrap" id="contenido">
+        <div class="login-brand">
+          <a
+            class="brand"
+            href="index.html"
+            aria-label="Casa Trompo, volver al inicio"
+          >
+            <span class="logo-mark" aria-hidden="true"></span>
+            <span class="brand__text">
+              <span class="brand__kicker">Hogar geriátrico</span>
+              <span class="brand__name">Casa Trompo</span>
+            </span>
+          </a>
+          <a class="btn btn--outline btn--small" href="index.html"
+            >Volver al inicio</a
+          >
         </div>
 
-        <!-- El formulario es demostrativo y conserva los valores para facilitar pruebas. -->
-        <form
-          data-demo-form
-          data-keep-values
-          data-success="Ingreso de demostración: aquí se conectará el portal con el servidor."
-        >
-          <!-- Para conectarlo a tu servidor: agrega method="post" y action="tu-ruta" (PHP o Express) -->
-          <div class="field">
-            <label for="email">Correo electrónico</label>
-            <input
-              class="input"
-              id="email"
-              name="email"
-              type="email"
-              autocomplete="username"
-              required
-            />
-          </div>
+        <div class="auth-form">
+          <h1>Bienvenido de nuevo a casa</h1>
+          <p class="lead">Ingresa al portal de familias.</p>
 
-          <div class="field">
-            <label for="clave">Contraseña</label>
-            <div class="password">
+          <!-- El formulario es demostrativo y conserva los valores para facilitar pruebas. -->
+          <form
+            data-demo-form
+            data-keep-values
+            data-success="Ingreso de demostración: aquí se conectará el portal con el servidor."
+          >
+            <!-- Para conectarlo a tu servidor: agrega method="post" y action="tu-ruta" (PHP o Express) -->
+            <div class="field">
+              <label for="email">Correo electrónico</label>
               <input
                 class="input"
-                id="clave"
-                name="clave"
-                type="password"
-                autocomplete="current-password"
+                id="email"
+                name="email"
+                type="email"
+                autocomplete="username"
                 required
               />
-              <button
-                class="password__toggle"
-                type="button"
-                data-toggle-password="clave"
-                aria-pressed="false"
-                aria-label="Mostrar contraseña"
-              >
-                Mostrar
-              </button>
             </div>
-          </div>
 
-          <div class="login-meta">
-            <div class="check">
-              <input type="checkbox" id="remember" name="remember" />
-              <label for="remember">Recordar mis datos</label>
+            <div class="field">
+              <label for="clave">Contraseña</label>
+              <div class="password">
+                <input
+                  class="input"
+                  id="clave"
+                  name="clave"
+                  type="password"
+                  autocomplete="current-password"
+                  required
+                />
+                <button
+                  class="password__toggle"
+                  type="button"
+                  data-toggle-password="clave"
+                  aria-pressed="false"
+                  aria-label="Mostrar contraseña"
+                >
+                  Mostrar
+                </button>
+              </div>
             </div>
-            <a href="#">¿Olvidaste tu contraseña?</a>
-          </div>
 
-          <button class="btn btn--primary btn--block" type="submit">
-            Ingresar al portal
-          </button>
-          <p class="form-status" role="status" tabindex="-1" hidden></p>
-        </form>
+            <div class="login-meta">
+              <div class="check">
+                <input type="checkbox" id="remember" name="remember" />
+                <label for="remember">Recordar mis datos</label>
+              </div>
+              <a href="#">¿Olvidaste tu contraseña?</a>
+            </div>
 
-        <p class="auth-alt">
-          ¿Aún no tienes cuenta?
-          <a href="registro.html">Crea tu cuenta familiar</a>
-        </p>
+            <button class="btn btn--primary btn--block" type="submit">
+              Ingresar al portal
+            </button>
+            <p class="form-status" role="status" tabindex="-1" hidden></p>
+          </form>
+
+          <p class="auth-alt">
+            ¿Aún no tienes cuenta?
+            <a href="registro.html">Crea tu cuenta familiar</a>
+          </p>
+        </div>
       </main>
+
+      <aside class="auth-visual">
+        <img
+          src="img/hero-escena.jpg"
+          width="1044"
+          height="980"
+          alt="Una pareja de abuelos abrazados mirando el atardecer en el campo, con un trompo, un carrito y una muñeca a su lado"
+        />
+        <div class="auth-visual__text">
+          <p class="script">Qué alegría tenerte de vuelta</p>
+          <p>Inicia sesión para estar cerca de quienes más quieres.</p>
+        </div>
+      </aside>
     </div>
 
     <!-- Comportamientos compartidos: accesibilidad, recordar correo y validación. -->

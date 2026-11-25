@@ -1,0 +1,73 @@
+name: CI — Validación de Calidad y Seguridad
+
+on:
+  pull_request:
+    branches: [main]
+  push:
+    branches: [main]
+
+jobs:
+  quality-and-security-gate:
+    name: Auditoría de Código, MySQL InnoDB y Stack Nativo
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: 1. Descargar código del repositorio
+        uses: actions/checkout@v4
+
+      - name: 2. Verificar que no existan archivos .env expuestos
+        run: |
+          LEAKED_ENV=$(git ls-files | grep -E '(^|/)\.env($|\.)' | grep -v '\.env\.example$' || true)
+          if [ -n "$LEAKED_ENV" ]; then
+            echo "ERROR DE SEGURIDAD: Archivos de entorno detectados en Git:"
+            echo "$LEAKED_ENV"
+            exit 1
+          fi
+
+      - name: 3. Validar cumplimiento de stack sin Bootstrap en Frontend
+        run: |
+          BOOTSTRAP_REFS=$(grep -rnwiE "bootstrap(\.min)?\.(css|js)" frontend/ 2>/dev/null || true)
+          if [ -n "$BOOTSTRAP_REFS" ]; then
+            echo "ERROR DE ARQUITECTURA: Se detectaron referencias a Bootstrap (stack aprobado es CSS3 nativo):"
+            echo "$BOOTSTRAP_REFS"
+            exit 1
+          fi
+
+      - name: 4. Configurar entorno Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+
+      - name: 5. Validar sintaxis de archivos JavaScript (Backend y Frontend)
+        run: |
+          JS_FILES=$(find backend frontend -type f -name "*.js" ! -path "*/node_modules/*" 2>/dev/null || true)
+          if [ -n "$JS_FILES" ]; then
+            for file in $JS_FILES; do
+              echo "Verificando sintaxis JS: $file"
+              node --check "$file"
+            done
+          else
+            echo "Sin archivos .js para validar aún."
+          fi
+
+      - name: 6. Ejecutar dependencias y pruebas de Backend (si existe package.json)
+        run: |
+          if [ -f backend/package.json ]; then
+            cd backend
+            npm ci
+            npm test --if-present
+          else
+            echo "backend/package.json aún no inicializado; omitiendo npm ci."
+          fi
+
+      - name: 7. Validar estándar MySQL InnoDB en scripts SQL
+        run: |
+          SQL_FILES=$(find database -type f -name "*.sql" 2>/dev/null || true)
+          if [ -n "$SQL_FILES" ]; then
+            for sql in $SQL_FILES; do
+              if ! grep -qi "InnoDB" "$sql"; then
+                echo "ERROR DB: El archivo $sql no declara ENGINE=InnoDB."
+                exit 1
+              fi
+            done
+          fi

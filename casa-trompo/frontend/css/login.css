@@ -1,78 +1,15 @@
-/* LOGIN */
-/* Fondo ilustrado y capa de color para mantener legible el contenido. */
-.login {
+/* Opciones auxiliares del formulario de inicio de sesión. */
+.login-form-wrap {
   position: relative;
-  display: grid;
-  place-items: center;
-  min-height: 100vh;
-  min-height: 100svh;
-  padding: 5rem 1.25rem 3rem;
-  overflow: hidden;
-  background: linear-gradient(
-    180deg,
-    var(--sky-top),
-    var(--sky-glow) 60%,
-    var(--sky-sun)
-  );
 }
-.login__bg {
+.login-brand {
   position: absolute;
-  inset: 0;
-}
-.login__bg img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: center 40%;
-}
-.login__bg::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(
-    180deg,
-    rgba(73, 113, 166, 0.45),
-    rgba(242, 162, 12, 0.3) 60%,
-    rgba(133, 76, 44, 0.5)
-  );
-}
-
-/* Enlace para volver al inicio y tarjeta que contiene el acceso familiar. */
-.login__back {
-  position: absolute;
-  top: 1.25rem;
-  left: 1.25rem;
-  z-index: 2;
-}
-.login-card {
-  position: relative;
-  z-index: 1;
-  width: min(100%, 30rem);
-  padding: clamp(1.75rem, 5vw, 2.75rem);
-  background: rgba(252, 235, 220, 0.97);
-  border-radius: var(--radius-md);
-  box-shadow: 0 32px 64px -24px rgba(59, 47, 47, 0.7);
-}
-
-/* Marca, título y opciones auxiliares del formulario de inicio de sesión. */
-.login-card__head {
-  margin-bottom: 1.75rem;
-  text-align: center;
-}
-.login-card__head .logo-mark {
-  width: 84px;
-  height: 84px;
-  color: var(--color-accent);
-}
-.login-card__head .brand-name {
-  margin: 0.35rem 0 0;
-  font: 700 1.1rem/1 var(--font-serif);
-  color: var(--color-ink-soft);
-}
-.login-card h1 {
-  margin: 0.35em 0 0;
-  font-size: clamp(1.8rem, 2vw + 1rem, 2.2rem);
-  text-wrap: balance;
+  top: clamp(1.25rem, 4vw, 3rem);
+  left: clamp(1.25rem, 5vw, 4rem);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1rem;
 }
 .login-meta {
   display: flex;
@@ -87,4 +24,10 @@
 }
 .login-meta a {
   font-weight: 800;
+}
+
+@media (max-width: 900px) {
+  .login-form-wrap {
+    padding-top: 9rem;
+  }
 }
