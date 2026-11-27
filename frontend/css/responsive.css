@@ -92,18 +92,6 @@
     grid-row: auto;
     min-height: 280px;
   }
-  .auth-split {
-    grid-template-columns: 1fr;
-  }
-  .auth-visual {
-    min-height: 260px;
-  }
-  .auth-visual__text {
-    margin-top: auto;
-  }
-  .auth-visual__text p:last-child {
-    display: none;
-  }
 }
 
 @media (max-width: 760px) {

@@ -34,14 +34,12 @@
   text-align: center;
 }
 .events-empty__calendar {
+  display: block;
   width: 4rem;
   height: 4rem;
   margin: 0 auto 1.5rem;
-  fill: none;
-  stroke: var(--color-accent-deep);
-  stroke-linecap: round;
-  stroke-linejoin: round;
-  stroke-width: 2.5;
+  font-size: 4rem;
+  color: var(--color-accent-deep);
 }
 .events-empty p {
   max-width: 38rem;

@@ -16,12 +16,20 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Caveat:wght@600&family=Lora:wght@500;600;700&family=Nunito:wght@400;600;700;800&family=Pacifico&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Pacifico&display=swap"
       rel="stylesheet"
     />
     <link
       rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+      href="https://cdn-uicons.flaticon.com/uicons-bold-rounded/css/uicons-bold-rounded.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn-uicons.flaticon.com/uicons-regular-rounded/css/uicons-regular-rounded.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn-uicons.flaticon.com/uicons-brands/css/uicons-brands.css"
     />
     <link rel="stylesheet" href="css/General_Styles.css" />
     <link rel="stylesheet" href="css/index.css" />
@@ -30,49 +38,6 @@
   <body>
     <!-- Enlace de acceso rápido para navegar directamente al contenido principal. -->
     <a class="skip-link" href="#contenido">Saltar al contenido</a>
-
-    <!-- Símbolos SVG reutilizables en las tarjetas y datos de contacto. -->
-    <svg class="svg-symbols" aria-hidden="true" focusable="false">
-      <symbol id="i-heart" viewBox="0 0 48 48">
-        <path
-          d="M24 41C9 31 6 20 12 14.5c4-3.6 9-2 12 2.5 3-4.5 8-6.1 12-2.5 6 5.5 3 16.5-12 26.5z"
-        />
-      </symbol>
-      <symbol id="i-trompo" viewBox="0 0 48 48">
-        <path d="M15 17c0-6 18-6 18 0 0 14-5 24-9 29-4-5-9-15-9-29z" />
-        <path d="M16 24c5 3 11 3 16 0M18 32c4 2.5 8 2.5 12 0" />
-        <path d="M21 8h6v4h-6z" />
-      </symbol>
-      <symbol id="i-nature" viewBox="0 0 48 48">
-        <circle cx="35" cy="13" r="5.5" />
-        <path d="M5 40c7-8 15-8 22-2 6 5 10 3 16 0" />
-        <path d="M15 33V22" />
-        <circle cx="15" cy="17" r="6" />
-      </symbol>
-      <symbol id="i-book" viewBox="0 0 48 48">
-        <path
-          d="M24 12c-4-3-10-4-17-3v26c7-1 13 0 17 3 4-3 10-4 17-3V9c-7-1-13 0-17 3z"
-        />
-        <path d="M24 12v26" />
-      </symbol>
-      <symbol id="i-pin" viewBox="0 0 48 48">
-        <path d="M24 43c-9-9-14-16-14-23a14 14 0 0 1 28 0c0 7-5 14-14 23z" />
-        <circle cx="24" cy="20" r="5" />
-      </symbol>
-      <symbol id="i-phone" viewBox="0 0 48 48">
-        <path
-          d="M12 6h8l3 10-5 3a24 24 0 0 0 11 11l3-5 10 3v8c0 2-2 4-4 4C20 40 8 28 8 10c0-2 2-4 4-4z"
-        />
-      </symbol>
-      <symbol id="i-mail" viewBox="0 0 48 48">
-        <rect x="6" y="10" width="36" height="28" rx="3" />
-        <path d="M7 13l17 13 17-13" />
-      </symbol>
-      <symbol id="i-clock" viewBox="0 0 48 48">
-        <circle cx="24" cy="24" r="17" />
-        <path d="M24 13v11l8 5" />
-      </symbol>
-    </svg>
 
     <!-- Cabecera global con identidad de marca, navegación y acceso al portal familiar. -->
     <header class="site-header is-transparent">
@@ -134,24 +99,18 @@
         </div>
         <div class="hero__scrim" aria-hidden="true"></div>
 
-        <svg class="spark spark--first" viewBox="0 0 24 24" aria-hidden="true">
-          <path
-            fill="currentColor"
-            d="M12 0l2.6 9.4L24 12l-9.4 2.6L12 24l-2.6-9.4L0 12l9.4-2.6z"
-          />
-        </svg>
-        <svg class="spark spark--second" viewBox="0 0 24 24" aria-hidden="true">
-          <path
-            fill="currentColor"
-            d="M12 0l2.6 9.4L24 12l-9.4 2.6L12 24l-2.6-9.4L0 12l9.4-2.6z"
-          />
-        </svg>
-        <svg class="spark spark--third" viewBox="0 0 24 24" aria-hidden="true">
-          <path
-            fill="currentColor"
-            d="M12 0l2.6 9.4L24 12l-9.4 2.6L12 24l-2.6-9.4L0 12l9.4-2.6z"
-          />
-        </svg>
+        <i
+          class="fi fi-rr-sparkle spark spark--first"
+          aria-hidden="true"
+        ></i>
+        <i
+          class="fi fi-rr-sparkle spark spark--second"
+          aria-hidden="true"
+        ></i>
+        <i
+          class="fi fi-rr-sparkle spark spark--third"
+          aria-hidden="true"
+        ></i>
 
         <div class="container hero__content">
           <div class="hero__text">
@@ -189,9 +148,7 @@
           <div class="essence-grid">
             <article class="essence-card">
               <div class="icon-badge">
-                <svg class="icon" aria-hidden="true">
-                  <use href="#i-heart" />
-                </svg>
+                <i class="fi fi-rr-heart icon" aria-hidden="true"></i>
               </div>
               <h3>Cuidado con amor</h3>
               <p>
@@ -203,9 +160,7 @@
 
             <article class="essence-card">
               <div class="icon-badge icon-badge--sage">
-                <svg class="icon" aria-hidden="true">
-                  <use href="#i-trompo" />
-                </svg>
+                <i class="fi fi-br-toy icon" aria-hidden="true"></i>
               </div>
               <h3>Talleres de memoria y recreación</h3>
               <p>
@@ -217,9 +172,7 @@
 
             <article class="essence-card">
               <div class="icon-badge icon-badge--gold">
-                <svg class="icon" aria-hidden="true">
-                  <use href="#i-nature" />
-                </svg>
+                <i class="fi fi-rr-tree icon" aria-hidden="true"></i>
               </div>
               <h3>Vida tranquila en la naturaleza</h3>
               <p>
@@ -428,14 +381,29 @@
           </a>
           <p class="script">donde la infancia vuelve a casa</p>
           <div class="footer-social" aria-label="Redes sociales">
-            <a href="https://www.facebook.com/share/1K6i5qnbYf/" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
-              <i class="fa-brands fa-facebook" aria-hidden="true"></i>
+            <a
+              href="https://www.facebook.com/share/1K6i5qnbYf/"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Facebook"
+            >
+              <i class="fi fi-brands-facebook" aria-hidden="true"></i>
             </a>
-            <a href="https://www.instagram.com/hgcasatrompo/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
-              <i class="fa-brands fa-square-instagram" aria-hidden="true"></i>
+            <a
+              href="https://www.instagram.com/hgcasatrompo/"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Instagram"
+            >
+              <i class="fi fi-brands-instagram" aria-hidden="true"></i>
             </a>
-            <a href="https://www.youtube.com/channel/UCef9Dt6jhXNS-B6FLd3jZgA" target="_blank" rel="noopener noreferrer" aria-label="YouTube">
-              <i class="fa-brands fa-youtube" aria-hidden="true"></i>
+            <a
+              href="https://www.youtube.com/channel/UCef9Dt6jhXNS-B6FLd3jZgA"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="YouTube"
+            >
+              <i class="fi fi-brands-youtube" aria-hidden="true"></i>
             </a>
           </div>
         </div>
@@ -445,22 +413,22 @@
           <!-- Datos de ejemplo -->
           <ul class="footer-list">
             <li>
-              <svg class="icon" aria-hidden="true"><use href="#i-pin" /></svg
-              ><span>Vereda El Trompo, a 20 minutos del casco urbano</span>
+              <i class="fi fi-rr-map-marker icon" aria-hidden="true"></i>
+              <span>Vereda El Trompo, a 20 minutos del casco urbano</span>
             </li>
             <li>
-              <svg class="icon" aria-hidden="true"><use href="#i-phone" /></svg
-              ><a href="tel:+573000000000">+57 300 000 0000</a>
+              <i class="fi fi-rr-phone icon" aria-hidden="true"></i>
+              <a href="tel:+573000000000">+57 300 000 0000</a>
             </li>
             <li>
-              <svg class="icon" aria-hidden="true"><use href="#i-mail" /></svg
-              ><a href="mailto:contacto@casatrompo.com"
+              <i class="fi fi-rr-envelope icon" aria-hidden="true"></i>
+              <a href="mailto:contacto@casatrompo.com"
                 >contacto@casatrompo.com</a
               >
             </li>
             <li>
-              <svg class="icon" aria-hidden="true"><use href="#i-clock" /></svg
-              ><span>Visitas todos los días, de 9:00 a. m. a 6:00 p. m.</span>
+              <i class="fi fi-rr-clock icon" aria-hidden="true"></i>
+              <span>Visitas todos los días, de 9:00 a. m. a 6:00 p. m.</span>
             </li>
           </ul>
         </div>

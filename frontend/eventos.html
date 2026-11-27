@@ -13,12 +13,20 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Caveat:wght@600&family=Lora:wght@500;600;700&family=Nunito:wght@400;600;700;800&family=Pacifico&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Pacifico&display=swap"
       rel="stylesheet"
     />
     <link
       rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+      href="https://cdn-uicons.flaticon.com/uicons-bold-rounded/css/uicons-bold-rounded.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn-uicons.flaticon.com/uicons-regular-rounded/css/uicons-regular-rounded.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn-uicons.flaticon.com/uicons-brands/css/uicons-brands.css"
     />
     <link rel="stylesheet" href="css/General_Styles.css" />
     <link rel="stylesheet" href="css/eventos.css" />
@@ -26,26 +34,6 @@
   </head>
   <body>
     <a class="skip-link" href="#contenido">Saltar al contenido</a>
-
-    <svg class="svg-symbols" aria-hidden="true" focusable="false">
-      <symbol id="i-pin" viewBox="0 0 48 48">
-        <path d="M24 43c-9-9-14-16-14-23a14 14 0 0 1 28 0c0 7-5 14-14 23z" />
-        <circle cx="24" cy="20" r="5" />
-      </symbol>
-      <symbol id="i-phone" viewBox="0 0 48 48">
-        <path
-          d="M12 6h8l3 10-5 3a24 24 0 0 0 11 11l3-5 10 3v8c0 2-2 4-4 4C20 40 8 28 8 10c0-2 2-4 4-4z"
-        />
-      </symbol>
-      <symbol id="i-mail" viewBox="0 0 48 48">
-        <rect x="6" y="10" width="36" height="28" rx="3" />
-        <path d="M7 13l17 13 17-13" />
-      </symbol>
-      <symbol id="i-clock" viewBox="0 0 48 48">
-        <circle cx="24" cy="24" r="17" />
-        <path d="M24 13v11l8 5" />
-      </symbol>
-    </svg>
 
     <header class="site-header">
       <div class="container site-header__inner">
@@ -110,14 +98,10 @@
       >
         <div class="container">
           <div class="events-empty">
-            <svg
-              class="events-empty__calendar"
-              viewBox="0 0 48 48"
+            <i
+              class="fi fi-rr-calendar events-empty__calendar"
               aria-hidden="true"
-            >
-              <rect x="6" y="10" width="36" height="32" rx="4" />
-              <path d="M15 6v8M33 6v8M6 19h36M15 27h6M27 27h6M15 34h6" />
-            </svg>
+            ></i>
             <h2 id="agenda-titulo">Estamos preparando la agenda</h2>
             <p>
               En esta sección publicaremos las fechas, horarios y detalles de
@@ -154,7 +138,7 @@
               rel="noopener noreferrer"
               aria-label="Facebook"
             >
-              <i class="fa-brands fa-facebook" aria-hidden="true"></i>
+              <i class="fi fi-brands-facebook" aria-hidden="true"></i>
             </a>
             <a
               href="https://www.instagram.com/hgcasatrompo/"
@@ -162,7 +146,7 @@
               rel="noopener noreferrer"
               aria-label="Instagram"
             >
-              <i class="fa-brands fa-square-instagram" aria-hidden="true"></i>
+              <i class="fi fi-brands-instagram" aria-hidden="true"></i>
             </a>
             <a
               href="https://www.youtube.com/channel/UCef9Dt6jhXNS-B6FLd3jZgA"
@@ -170,7 +154,7 @@
               rel="noopener noreferrer"
               aria-label="YouTube"
             >
-              <i class="fa-brands fa-youtube" aria-hidden="true"></i>
+              <i class="fi fi-brands-youtube" aria-hidden="true"></i>
             </a>
           </div>
         </div>
@@ -179,21 +163,21 @@
           <h3>Contacto</h3>
           <ul class="footer-list">
             <li>
-              <svg class="icon" aria-hidden="true"><use href="#i-pin" /></svg>
+              <i class="fi fi-rr-map-marker icon" aria-hidden="true"></i>
               <span>Vereda El Trompo, a 20 minutos del casco urbano</span>
             </li>
             <li>
-              <svg class="icon" aria-hidden="true"><use href="#i-phone" /></svg>
+              <i class="fi fi-rr-phone icon" aria-hidden="true"></i>
               <a href="tel:+573000000000">+57 300 000 0000</a>
             </li>
             <li>
-              <svg class="icon" aria-hidden="true"><use href="#i-mail" /></svg>
+              <i class="fi fi-rr-envelope icon" aria-hidden="true"></i>
               <a href="mailto:contacto@casatrompo.com"
                 >contacto@casatrompo.com</a
               >
             </li>
             <li>
-              <svg class="icon" aria-hidden="true"><use href="#i-clock" /></svg>
+              <i class="fi fi-rr-clock icon" aria-hidden="true"></i>
               <span>Visitas todos los días, de 9:00 a. m. a 6:00 p. m.</span>
             </li>
           </ul>

@@ -15,12 +15,20 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Caveat:wght@600&family=Lora:wght@500;600;700&family=Nunito:wght@400;600;700;800&family=Pacifico&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Pacifico&display=swap"
       rel="stylesheet"
     />
     <link
       rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+      href="https://cdn-uicons.flaticon.com/uicons-bold-rounded/css/uicons-bold-rounded.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn-uicons.flaticon.com/uicons-regular-rounded/css/uicons-regular-rounded.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn-uicons.flaticon.com/uicons-brands/css/uicons-brands.css"
     />
     <link rel="stylesheet" href="css/General_Styles.css" />
     <link rel="stylesheet" href="css/contacto.css" />
@@ -29,33 +37,6 @@
   <body>
     <!-- Enlace de acceso rápido para saltar al contenido de contacto. -->
     <a class="skip-link" href="#contenido">Saltar al contenido</a>
-
-    <!-- Símbolos SVG reutilizables para los datos y acciones de contacto. -->
-    <svg class="svg-symbols" aria-hidden="true" focusable="false">
-      <symbol id="i-pin" viewBox="0 0 48 48">
-        <path d="M24 43c-9-9-14-16-14-23a14 14 0 0 1 28 0c0 7-5 14-14 23z" />
-        <circle cx="24" cy="20" r="5" />
-      </symbol>
-      <symbol id="i-phone" viewBox="0 0 48 48">
-        <path
-          d="M12 6h8l3 10-5 3a24 24 0 0 0 11 11l3-5 10 3v8c0 2-2 4-4 4C20 40 8 28 8 10c0-2 2-4 4-4z"
-        />
-      </symbol>
-      <symbol id="i-mail" viewBox="0 0 48 48">
-        <rect x="6" y="10" width="36" height="28" rx="3" />
-        <path d="M7 13l17 13 17-13" />
-      </symbol>
-      <symbol id="i-clock" viewBox="0 0 48 48">
-        <circle cx="24" cy="24" r="17" />
-        <path d="M24 13v11l8 5" />
-      </symbol>
-      <symbol id="i-chat" viewBox="0 0 48 48">
-        <path
-          d="M8 10h32a2 2 0 0 1 2 2v20a2 2 0 0 1-2 2H22l-9 8v-8H8a2 2 0 0 1-2-2V12a2 2 0 0 1 2-2z"
-        />
-        <path d="M14 20h20M14 27h12" />
-      </symbol>
-    </svg>
 
     <!-- Cabecera global con enlaces a las páginas y al portal familiar. -->
     <header class="site-header">
@@ -243,10 +224,9 @@
             <!-- Datos de ejemplo: reemplaza por los reales -->
             <ul class="contact-list">
               <li>
-                <span class="icon-badge"
-                  ><svg class="icon" aria-hidden="true">
-                    <use href="#i-pin" /></svg
-                ></span>
+                <span class="icon-badge">
+                  <i class="fi fi-rr-map-marker icon" aria-hidden="true"></i>
+                </span>
                 <div>
                   <strong>Dónde estamos</strong>
                   <p>
@@ -256,10 +236,9 @@
                 </div>
               </li>
               <li>
-                <span class="icon-badge icon-badge--sage"
-                  ><svg class="icon" aria-hidden="true">
-                    <use href="#i-clock" /></svg
-                ></span>
+                <span class="icon-badge icon-badge--sage">
+                  <i class="fi fi-rr-clock icon" aria-hidden="true"></i>
+                </span>
                 <div>
                   <strong>Horarios de visita</strong>
                   <p>
@@ -271,20 +250,19 @@
             </ul>
 
             <div class="contact-actions">
-              <a class="btn btn--sage" href="tel:+573000000000"
-                ><svg class="icon" aria-hidden="true">
-                  <use href="#i-phone" /></svg
-                >Llamar ahora</a
-              >
+              <a class="btn btn--sage" href="tel:+573000000000">
+                <i class="fi fi-br-phone icon" aria-hidden="true"></i>
+                Llamar ahora
+              </a>
               <a
                 class="btn btn--primary"
                 href="https://wa.me/573000000000"
                 target="_blank"
                 rel="noopener"
-                ><svg class="icon" aria-hidden="true">
-                  <use href="#i-chat" /></svg
-                >WhatsApp</a
               >
+                <i class="fi fi-rr-comment-alt icon" aria-hidden="true"></i>
+                WhatsApp
+              </a>
             </div>
 
             <!-- Mapa: reemplaza este bloque por un <iframe> de Google Maps u OpenStreetMap con la ubicación real:
@@ -295,7 +273,7 @@
               aria-label="Espacio reservado para el mapa interactivo"
             >
               <div>
-                <svg class="icon" aria-hidden="true"><use href="#i-pin" /></svg>
+                <i class="fi fi-br-map-marker icon" aria-hidden="true"></i>
                 <p>Aquí irá el mapa interactivo con la ubicación de la casa</p>
               </div>
             </div>
@@ -322,13 +300,13 @@
           <p class="script">donde la infancia vuelve a casa</p>
           <div class="footer-social" aria-label="Redes sociales">
             <a href="https://www.facebook.com/share/1K6i5qnbYf/" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
-              <i class="fa-brands fa-facebook" aria-hidden="true"></i>
+              <i class="fi fi-brands-facebook" aria-hidden="true"></i>
             </a>
             <a href="https://www.instagram.com/hgcasatrompo/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
-              <i class="fa-brands fa-square-instagram" aria-hidden="true"></i>
+              <i class="fi fi-brands-instagram" aria-hidden="true"></i>
             </a>
             <a href="https://www.youtube.com/channel/UCef9Dt6jhXNS-B6FLd3jZgA" target="_blank" rel="noopener noreferrer" aria-label="YouTube">
-              <i class="fa-brands fa-youtube" aria-hidden="true"></i>
+              <i class="fi fi-brands-youtube" aria-hidden="true"></i>
             </a>
           </div>
         </div>
@@ -337,22 +315,22 @@
           <h3>Contacto</h3>
           <ul class="footer-list">
             <li>
-              <svg class="icon" aria-hidden="true"><use href="#i-pin" /></svg
-              ><span>Vereda El Trompo, a 20 minutos del casco urbano</span>
+              <i class="fi fi-rr-map-marker icon" aria-hidden="true"></i>
+              <span>Vereda El Trompo, a 20 minutos del casco urbano</span>
             </li>
             <li>
-              <svg class="icon" aria-hidden="true"><use href="#i-phone" /></svg
-              ><a href="tel:+573000000000">+57 300 000 0000</a>
+              <i class="fi fi-rr-phone icon" aria-hidden="true"></i>
+              <a href="tel:+573000000000">+57 300 000 0000</a>
             </li>
             <li>
-              <svg class="icon" aria-hidden="true"><use href="#i-mail" /></svg
-              ><a href="mailto:contacto@casatrompo.com"
+              <i class="fi fi-rr-envelope icon" aria-hidden="true"></i>
+              <a href="mailto:contacto@casatrompo.com"
                 >contacto@casatrompo.com</a
               >
             </li>
             <li>
-              <svg class="icon" aria-hidden="true"><use href="#i-clock" /></svg
-              ><span>Visitas todos los días, de 9:00 a. m. a 6:00 p. m.</span>
+              <i class="fi fi-rr-clock icon" aria-hidden="true"></i>
+              <span>Visitas todos los días, de 9:00 a. m. a 6:00 p. m.</span>
             </li>
           </ul>
         </div>

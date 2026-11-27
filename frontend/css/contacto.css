@@ -29,6 +29,7 @@
 .contact-list .icon-badge .icon {
   width: 28px;
   height: 28px;
+  font-size: 28px;
 }
 .contact-list strong {
   display: block;
@@ -77,6 +78,7 @@
 .map-box .icon {
   width: 44px;
   height: 44px;
+  font-size: 44px;
   margin-bottom: 0.4rem;
   color: var(--color-accent-deep);
 }

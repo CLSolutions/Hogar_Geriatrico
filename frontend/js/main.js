@@ -47,7 +47,7 @@
     });
   };
 
-  // Font Awesome aporta el icono visual; el nombre accesible se conserva para lectores de pantalla.
+  // UIcons aporta el icono visual; el nombre accesible se conserva para lectores de pantalla.
   const a11yToggle = document.createElement("button");
   a11yToggle.type = "button";
   a11yToggle.className = "a11y-toggle";
@@ -56,7 +56,7 @@
   a11yToggle.setAttribute("aria-controls", "a11y-panel");
   a11yToggle.setAttribute("aria-label", "Abrir opciones de accesibilidad");
   a11yToggle.innerHTML =
-    '<i class="fa-solid fa-universal-access" aria-hidden="true"></i>';
+    '<i class="fi fi-br-universal-access" aria-hidden="true"></i>';
 
   const panel = document.createElement("section");
   panel.className = "a11y-panel";

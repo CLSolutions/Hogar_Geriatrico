@@ -1,14 +1,20 @@
 /* Opciones auxiliares del formulario de inicio de sesión. */
 .login-form-wrap {
   position: relative;
+  flex-direction: column;
+  justify-content: flex-start;
 }
 .login-brand {
-  position: absolute;
-  top: clamp(1.25rem, 4vw, 3rem);
-  left: clamp(1.25rem, 5vw, 4rem);
+  position: relative;
+  top: auto;
+  left: auto;
+  width: 100%;
+  max-width: 27rem;
+  margin: 0 0 clamp(1.25rem, 3vh, 2rem);
   display: flex;
   flex-direction: column;
   align-items: flex-start;
+  justify-content: flex-start;
   gap: 1rem;
 }
 .login-meta {
@@ -25,9 +31,72 @@
 .login-meta a {
   font-weight: 800;
 }
-
+.auth-split {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  min-height: 100vh;
+  min-height: 100svh;
+}
 @media (max-width: 900px) {
+  .auth-split {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
   .login-form-wrap {
-    padding-top: 9rem;
+    flex-direction: column;
+    align-items: center;
+    padding-top: clamp(1.5rem, 5vw, 2.5rem);
+  }
+
+  .login-brand {
+    position: relative;
+    top: auto;
+    left: auto;
+    width: 100%;
+    max-width: 36rem;
+    margin: 0 auto clamp(2rem, 6vw, 3.5rem);
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .auth-visual {
+    height: clamp(10rem, 28vw, 13rem);
+    min-height: 10rem;
+  }
+
+  .login-meta {
+    row-gap: 0.5rem;
+  }
+}
+
+@media (max-width: 640px) {
+  .auth-split {
+    grid-template-columns: 1fr;
+  }
+
+  .login-form-wrap {
+    min-height: auto;
+  }
+
+  .login-brand {
+    max-width: 27rem;
+    margin-bottom: 2rem;
+  }
+
+  .login-brand .brand__kicker {
+    display: none;
+  }
+
+  .login-meta {
+    align-items: flex-start;
+  }
+
+  .login-meta a {
+    width: 100%;
+  }
+
+  .auth-alt {
+    line-height: 1.5;
   }
 }
